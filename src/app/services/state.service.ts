@@ -8,8 +8,11 @@ export class StateService {
   toggleCounter = false;
 
   constructor() { 
-    if (this.counter == 0) {
-      this.toggleCounter = true
-    }
+    this.counter == 0 && (this.toggleCounter = true)
+
   }
+    incrementCounter(){
+      this.counter += 1;
+      this.counter > 0 && (this.toggleCounter = false);
+    }
 }

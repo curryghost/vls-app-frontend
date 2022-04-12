@@ -8,9 +8,10 @@ import { NavbarComponent } from './comps/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MaterialModule } from './material/material.module';
 import { CourseComponent } from './comps/course/course.component';
+import { AddToCartBtnComponent } from './comps/add-to-cart-btn/add-to-cart-btn.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, CourseComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, CourseComponent, AddToCartBtnComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
