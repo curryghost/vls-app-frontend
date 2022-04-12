@@ -10,9 +10,20 @@ import { MaterialModule } from './material/material.module';
 import { CourseComponent } from './comps/course/course.component';
 import { AddToCartBtnComponent } from './comps/add-to-cart-btn/add-to-cart-btn.component';
 import { LoginComponent } from './pages/login/login.component';
+import { CourseDetailsComponent } from './comps/course-details/course-details.component';
+import { CourseSignupComponent } from './pages/course-signup/course-signup.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, CourseComponent, AddToCartBtnComponent, LoginComponent],
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    HomeComponent,
+    CourseComponent,
+    AddToCartBtnComponent,
+    LoginComponent,
+    CourseDetailsComponent,
+    CourseSignupComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

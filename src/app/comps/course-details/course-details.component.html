@@ -1,0 +1,61 @@
+<div id="course-details-section">
+  <div class="hero-bar">
+    <h2>Course Name</h2>
+    <h5>By: Lecturer Name</h5>
+    <app-add-to-cart-btn></app-add-to-cart-btn>
+  </div>
+
+  <mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">info</mat-icon>
+        About
+      </ng-template>
+      <div class="course-about">
+        <h4>About this Course</h4>
+        <p>
+          course description lorem ipsum ca lorem ipsum ca lorem ipsum ca lorem
+          ipsum ca lorem ipsum ca lorem ipsum cascacsacac
+        </p>
+      </div>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">person_outline</mat-icon>
+        Instructor
+      </ng-template>
+
+      <div class="course-instructor">
+        <a href="#">Joe Biden</a>
+        <p>subject department</p>
+        <div class="student-number">
+          <mat-icon>people</mat-icon>
+          <p><b>1000</b> Students</p>
+        </div>
+        <div class="course-number">
+          <mat-icon></mat-icon>
+          <p><b>1000000</b> Courses</p>
+        </div>
+      </div>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">school</mat-icon>
+        Syllabus
+      </ng-template>
+
+      <div class="course-syllabus">
+        <h5>What you will learn from this course</h5>
+        <div class="quiz">
+          <div class="quiz-number">1</div>
+          <div class="quiz-description">
+            <p>Iterate quizes here</p>
+          </div>
+        </div>
+      </div>
+      <div class="course-faq"></div>
+    </mat-tab>
+  </mat-tab-group>
+</div>
