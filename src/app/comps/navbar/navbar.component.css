@@ -1,0 +1,26 @@
+.nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo a{
+    color: white;
+}
+.links > *{
+    margin: .5rem;
+}
+
+.navlink {
+    display: none;
+}
+
+
+@media screen and (min-width: 680px) {
+   #menu {
+       display: none;
+   } 
+   .navlink {
+        display: inline-block;
+   }
+}

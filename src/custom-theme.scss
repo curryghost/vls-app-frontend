@@ -14,6 +14,8 @@
 $vls-app-frontend-primary: mat.define-palette(mat.$indigo-palette);
 $vls-app-frontend-accent: mat.define-palette(mat.$amber-palette, A200, A400);
 
+$custom-secondary: mat.define-palette(mat.$pink-palette, 500);
+
 // The warn palette is optional (defaults to red).
 $vls-app-frontend-warn: mat.define-palette(mat.$red-palette);
 
@@ -23,7 +25,7 @@ $vls-app-frontend-theme: mat.define-light-theme(
   (
     color: (
       primary: $vls-app-frontend-primary,
-      accent: $vls-app-frontend-accent,
+      accent: $custom-secondary,
       warn: $vls-app-frontend-warn,
     ),
   )

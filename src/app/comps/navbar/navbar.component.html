@@ -1,3 +1,29 @@
 <mat-toolbar color="primary">
-  <h1>Hello</h1>
+  <div class="nav">
+    <div class="logo">
+      <button mat-flat-button color="primary"><a routerLink="/">VLS</a></button>
+    </div>
+    <div class="links">
+      <button
+        mat-flat-button
+        color="primary"
+        *ngFor="let link of links"
+        class="navlink"
+      >
+        <a>{{ link }}</a>
+      </button>
+      <button mat-raised-button color="accent">Login</button>
+      <button mat-icon-button id="menu">
+        <mat-icon [mat-menu-trigger-for]="popupMenu">menu</mat-icon>
+      </button>
+      <button mat-icon-button><mat-icon>shopping_cart</mat-icon></button>
+    </div>
+  </div>
 </mat-toolbar>
+<div class="popup-menu">
+  <mat-menu #popupMenu xPosition="before" id="pop">
+    <button mat-menu-item *ngFor="let link of links">
+      <a href="">{{ link }}</a>
+    </button>
+  </mat-menu>
+</div>
