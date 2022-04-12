@@ -10,20 +10,27 @@
         *ngFor="let link of links"
         class="navlink"
       >
-        <a>{{ link }}</a>
+        <a>{{ link.name }}</a>
       </button>
       <button mat-raised-button color="accent">Login</button>
       <button mat-icon-button id="menu">
         <mat-icon [mat-menu-trigger-for]="popupMenu">menu</mat-icon>
       </button>
-      <button mat-icon-button><mat-icon>shopping_cart</mat-icon></button>
+      <button mat-icon-button>
+        <mat-icon
+          [matBadge]="state.counter"
+          [matBadgeHidden]="state.toggleCounter"
+          matBadgeColor="warn"
+          >shopping_cart</mat-icon
+        >
+      </button>
     </div>
   </div>
 </mat-toolbar>
 <div class="popup-menu">
   <mat-menu #popupMenu xPosition="before" id="pop">
     <button mat-menu-item *ngFor="let link of links">
-      <a href="">{{ link }}</a>
+      <a href="">{{ link.name }}</a>
     </button>
   </mat-menu>
 </div>
