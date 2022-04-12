@@ -6,21 +6,18 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './comps/navbar/navbar.component';
 import { HomeComponent } from './pages/home/home.component';
+import { MaterialModule } from './material/material.module';
 import { CourseComponent } from './comps/course/course.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NavbarComponent,
-    HomeComponent,
-    CourseComponent
-  ],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, CourseComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MaterialModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
