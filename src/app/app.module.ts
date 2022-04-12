@@ -9,9 +9,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { MaterialModule } from './material/material.module';
 import { CourseComponent } from './comps/course/course.component';
 import { AddToCartBtnComponent } from './comps/add-to-cart-btn/add-to-cart-btn.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomeComponent, CourseComponent, AddToCartBtnComponent],
+  declarations: [AppComponent, NavbarComponent, HomeComponent, CourseComponent, AddToCartBtnComponent, LoginComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

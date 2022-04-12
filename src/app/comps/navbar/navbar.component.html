@@ -1,18 +1,19 @@
 <mat-toolbar color="primary">
   <div class="nav">
     <div class="logo">
-      <button mat-flat-button color="primary"><a routerLink="/">VLS</a></button>
+      <a routerLink="/">
+        <button mat-flat-button color="primary">VLS</button>
+      </a>
     </div>
     <div class="links">
-      <button
-        mat-flat-button
-        color="primary"
-        *ngFor="let link of links"
-        class="navlink"
+      <a [routerLink]="link.link" *ngFor="let link of links">
+        <button mat-flat-button color="primary" class="navlink">
+          {{ link.name }}
+        </button></a
       >
-        <a>{{ link.name }}</a>
-      </button>
-      <button mat-raised-button color="accent">Login</button>
+      <a routerLink="/login" routerLinkActive="active-login">
+        <button mat-raised-button color="accent">Login</button>
+      </a>
       <button mat-icon-button id="menu">
         <mat-icon [mat-menu-trigger-for]="popupMenu">menu</mat-icon>
       </button>
@@ -29,8 +30,10 @@
 </mat-toolbar>
 <div class="popup-menu">
   <mat-menu #popupMenu xPosition="before" id="pop">
-    <button mat-menu-item *ngFor="let link of links">
-      <a href="">{{ link.name }}</a>
-    </button>
+    <a [routerLink]="link.link" *ngFor="let link of links">
+      <button mat-menu-item>
+        {{ link.name }}
+      </button>
+    </a>
   </mat-menu>
 </div>

@@ -16,6 +16,10 @@
     display: none;
 }
 
+.active-login {
+    display: none;
+}
+
 
 @media screen and (min-width: 680px) {
    #menu {
