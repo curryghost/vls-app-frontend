@@ -7,7 +7,7 @@ import { CourseSignupComponent } from './pages/course-signup/course-signup.compo
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'course-signup', component: CourseSignupComponent },
+  { path: 'course-signup/:id', component: CourseSignupComponent },
 ];
 
 @NgModule({

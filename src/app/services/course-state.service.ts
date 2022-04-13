@@ -21,9 +21,16 @@ export class CourseStateService {
     const endDate = course.courseEnd;
 
     const startDateArr = startDate?.split(',')[0].split('-');
-    console.log(startDateArr);
     const endDateArr = endDate?.split(',')[0].split('-');
-    const startDateHours = new Date(startDateArr?[0], startDateArr?[1], startDateArr?[0])
+
+    const [dayS, monthS, yearS] = startDateArr!;
+    const startDateMinutes = new Date(+yearS, +monthS, +dayS).getTime();
+    const [dayE, monthE, yearE] = endDateArr!;
+    const endDateMinutes = new Date(+yearE, +monthE, +dayE).getTime();
+
+    const durationHours =
+      (endDateMinutes - startDateMinutes) / 1000 / 60 / 60 / 24;
+    return durationHours;
   }
 
   getCourse(id: number) {

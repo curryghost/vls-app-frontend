@@ -45,16 +45,18 @@
       </ul>
     </div>
     <div class="description">
-      <h1 class="title">{{course.courseName</h1>
-      <h2 class="duration">Duration: 5 days</h2>
+      <h1 class="title">{{ course.courseName }}</h1>
+      <h2 class="duration">
+        Duration: {{ courseState.getDuration(course) }} days
+      </h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum
-        architecto obcaecati enim dicta praesentium, quam nobis! Neque ad
-        aliquam facilis numquam. Veritatis, sit.
+        {{ course.couurseDescription }}
       </p>
-      <!-- <p class="read-more">
-        <button [routerLink]="['/course-signup', course.id]">Learn more</button>
-      </p> -->
+      <p class="read-more">
+        <button [routerLink]="['/course-signup/', course.courseId]">
+          Learn more
+        </button>
+      </p>
     </div>
   </div>
 </div>
