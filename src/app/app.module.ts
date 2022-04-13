@@ -12,6 +12,8 @@ import { AddToCartBtnComponent } from './comps/add-to-cart-btn/add-to-cart-btn.c
 import { LoginComponent } from './pages/login/login.component';
 import { CourseDetailsComponent } from './comps/course-details/course-details.component';
 import { CourseSignupComponent } from './pages/course-signup/course-signup.component';
+import { LoginFormComponent } from './comps/login-form/login-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { CourseSignupComponent } from './pages/course-signup/course-signup.compo
     LoginComponent,
     CourseDetailsComponent,
     CourseSignupComponent,
+    LoginFormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

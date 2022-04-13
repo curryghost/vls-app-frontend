@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   links = [
     {name: "Home", link: "/"},
     {name: "Courses", link: "#"},
-    {name: "Signup", link: "#"}
+    {name: "Signup", link: "course-signup"}
   ]
 
   //Too distracted with this shit

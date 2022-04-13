@@ -1,0 +1,54 @@
+<div class="form-container">
+  <mat-card>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <mat-form-field>
+        <mat-label>User Name</mat-label>
+        <div class="login-input">
+          <input
+            type="text"
+            matInput
+            placeholder="Name Example"
+            formControlName="name"
+          />
+          <mat-icon *ngIf="name?.touched && name?.valid">task_alt</mat-icon>
+        </div>
+        <mat-error *ngIf="name?.touched && name?.invalid">
+          <mat-error *ngIf="name?.errors?.['required']">
+            Name is required
+          </mat-error>
+          <mat-error *ngIf="name?.errors?.['minlength']"
+            >Minimum length of at least 5 characters
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <div class="login-input">
+          <input
+            type="password"
+            matInput
+            placeholder="password"
+            formControlName="password"
+          />
+          <mat-icon *ngIf="password?.touched && name?.valid">task_alt</mat-icon>
+        </div>
+        <mat-error *ngIf="password?.touched && password?.invalid">
+          <mat-error *ngIf="password?.errors?.['required']">
+            Password is required.
+          </mat-error>
+          <mat-error *ngIf="password?.errors?.['minlength']"
+            >Minimum length of at least 5 characters
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <button
+        type="submit"
+        [disabled]="loginForm.invalid"
+        mat-raised-button
+        color="primary"
+      >
+        Login
+      </button>
+    </form>
+  </mat-card>
+</div>

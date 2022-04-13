@@ -1,13 +1,12 @@
 /* Navbar */
 .nav-container {
     position: fixed;
-    top: 0;
     width: 100%;
     z-index: 99;
 }
 mat-toolbar {
     background-color: var(--primary-dark) !important;
-    height: 3.5rem;
+    height: 10vh;
     overflow-x: hidden;
 }
 .nav {
