@@ -22,11 +22,7 @@
         Duration: {{ courseState.getDuration(course) }} days
       </h2>
       <p>
-<<<<<<< HEAD
-        {{ course.courseDescription }}
-=======
         {{ course.courseDescription | summary }}
->>>>>>> 11b9c58f870aa0ae646a3705cc8b9194055843e7
       </p>
       <p class="read-more">
         <button [routerLink]="['/course-signup/', course.courseId]">

@@ -15,10 +15,9 @@
   height: 40%;
 }
 
-.course-about .course-instructor .course-syllabus {
-  margin: 1rem 0.5rem;
-}
-
-mat-tab > div {
-  padding: 1em 0.5em;
+.course-about,
+.course-instructor,
+.course-syllabus {
+  margin: 1rem 2rem;
+  padding: 1em 1.5em;
 }
