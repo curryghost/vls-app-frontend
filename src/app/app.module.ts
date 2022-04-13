@@ -29,6 +29,7 @@ import { CourseSignupComponent } from './pages/course-signup/course-signup.compo
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClient,
   ],
   providers: [],
   bootstrap: [AppComponent],
