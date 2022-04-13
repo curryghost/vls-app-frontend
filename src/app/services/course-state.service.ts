@@ -15,4 +15,8 @@ export class CourseStateService {
         this.course = res;
       })
   }
+
+  getCourse(id: number){
+    return this.course.find((key: any) => key.courseId == id)
+  }
 }

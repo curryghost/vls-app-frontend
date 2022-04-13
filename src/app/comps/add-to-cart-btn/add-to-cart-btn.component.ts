@@ -17,7 +17,7 @@ export class AddToCartBtnComponent implements OnInit {
     this.state.incrementCounter();
     this.toggleBtn = true;
     this.addToCartMsg = "Added to Cart"
-    console.log(this.courseState.course)
+    console.log(this.courseState.getCourse(1))
   }
 
   ngOnInit(): void {
