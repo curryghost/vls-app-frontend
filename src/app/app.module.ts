@@ -14,6 +14,7 @@ import { CourseDetailsComponent } from './comps/course-details/course-details.co
 import { CourseSignupComponent } from './pages/course-signup/course-signup.component';
 import { LoginFormComponent } from './comps/login-form/login-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,11 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-<<<<<<< HEAD
-    HttpClient,
-=======
+    HttpClientModule,
     ReactiveFormsModule
->>>>>>> 1542cfdd5c8a321333453ecf18e2fbfe3c2f763f
   ],
   providers: [],
   bootstrap: [AppComponent],

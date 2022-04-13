@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseStateService } from 'src/app/services/course-state.service';
 import { StateService } from 'src/app/services/state.service';
 
 @Component({
@@ -10,12 +11,13 @@ export class AddToCartBtnComponent implements OnInit {
   addToCartMsg = "Add to Cart";
   toggleBtn = false;
 
-  constructor(public state : StateService) { }
+  constructor(public state : StateService, public courseState: CourseStateService) { }
 
   addToCart(){
     this.state.incrementCounter();
     this.toggleBtn = true;
     this.addToCartMsg = "Added to Cart"
+    console.log(this.courseState.course)
   }
 
   ngOnInit(): void {

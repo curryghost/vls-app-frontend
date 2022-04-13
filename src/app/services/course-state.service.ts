@@ -5,9 +5,14 @@ import { CourseService } from './course.service';
   providedIn: 'root',
 })
 export class CourseStateService {
-  course = any;
+  course: any;
+
   constructor(private courseService: CourseService) {}
+
   initialize() {
-    this.courseService;
+    this.courseService.getCourses()
+      .subscribe(res => {
+        this.course = res;
+      })
   }
 }
