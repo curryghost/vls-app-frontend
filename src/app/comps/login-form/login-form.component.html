@@ -30,7 +30,9 @@
             placeholder="password"
             formControlName="password"
           />
-          <mat-icon *ngIf="password?.touched && name?.valid">task_alt</mat-icon>
+          <mat-icon *ngIf="password?.touched && password?.valid"
+            >task_alt</mat-icon
+          >
         </div>
         <mat-error *ngIf="password?.touched && password?.invalid">
           <mat-error *ngIf="password?.errors?.['required']">
