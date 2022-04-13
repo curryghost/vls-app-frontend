@@ -26,7 +26,9 @@
       </p> -->
     </div>
   </div>
+</div>
 
+<div id="course-section" *ngFor="let course of courseState.courses">
   <div class="course-card">
     <div class="meta">
       <div
@@ -36,12 +38,14 @@
         "
       ></div>
       <ul class="details">
-        <li class="author"><a href="#">John Doe</a></li>
-        <li class="date">Course begins: Aug. 24, 2022</li>
+        <li class="author">
+          <a href="#">{{ course.author?.name }}</a>
+        </li>
+        <li class="date">Course begins: {{ course.courseStart }}</li>
       </ul>
     </div>
     <div class="description">
-      <h1 class="title">Learning to Code</h1>
+      <h1 class="title">{{course.courseName</h1>
       <h2 class="duration">Duration: 5 days</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum
