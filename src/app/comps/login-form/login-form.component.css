@@ -48,6 +48,7 @@ mat-card {
     align-items: center;
 }
 .login-form h2 {
+    padding-top: 1rem;
     font-weight: 600;
 }
 
