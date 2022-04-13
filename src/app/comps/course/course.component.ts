@@ -17,6 +17,3 @@ export class CourseComponent implements OnInit {
     // });
   }
 }
-
-//hallo alif
-// this.service.getCourses();

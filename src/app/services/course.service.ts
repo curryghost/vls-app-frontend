@@ -5,7 +5,9 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class CourseService {
-  baseUrl: string = 'http://localhost:5000/api/course';
+  // baseUrl: string = 'http://localhost:5000/api/course';
+  baseUrl: string = 'http://localhost:26651/api/course';
+
   constructor(private http: HttpClient) {}
 
   getCourses() {
