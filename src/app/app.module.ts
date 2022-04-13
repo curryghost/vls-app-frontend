@@ -15,6 +15,7 @@ import { CourseSignupComponent } from './pages/course-signup/course-signup.compo
 import { LoginFormComponent } from './comps/login-form/login-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SummaryPipe } from './pipes/summary.pipe';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     CourseDetailsComponent,
     CourseSignupComponent,
     LoginFormComponent,
+    SummaryPipe
   ],
   imports: [
     BrowserModule,
