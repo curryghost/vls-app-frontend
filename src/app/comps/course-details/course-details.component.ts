@@ -23,7 +23,7 @@ export class CourseDetailsComponent implements OnInit {
 
     //fetches the product with the courseId in route
     this.course = this.courseState.courses.find(
-      (course) => course.courseId === +courseIdFromFromRoute
+      (course: Course) => course.courseId === +courseIdFromFromRoute
     );
   }
 }

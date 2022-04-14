@@ -1,7 +1,7 @@
-<div id="course-details-section">
+<div id="course-details-section" *ngIf="course">
   <div class="hero-bar">
-    <h2>Course Name</h2>
-    <h5>By: Lecturer Name</h5>
+    <h2>{{ course.courseName }}</h2>
+    <h5>By: {{ course.author }}</h5>
     <app-add-to-cart-btn></app-add-to-cart-btn>
   </div>
 
@@ -14,8 +14,7 @@
       <div class="course-about mat-elevation-z4">
         <h4>About this Course</h4>
         <p>
-          course description lorem ipsum ca lorem ipsum ca lorem ipsum ca lorem
-          ipsum ca lorem ipsum ca lorem ipsum cascacsacac
+          {{ course.courseDescription }}
         </p>
       </div>
     </mat-tab>
@@ -27,7 +26,7 @@
       </ng-template>
 
       <div class="course-instructor mat-elevation-z4">
-        <a href="#">Joe Biden</a>
+        <a href="#">{{ course.author }}</a>
         <p>subject department</p>
         <div class="student-number">
           <mat-icon>people</mat-icon>

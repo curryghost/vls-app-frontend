@@ -7,12 +7,12 @@ import { Course } from '../model/course.model';
 })
 export class CourseService {
   // baseUrl: string = 'http://localhost:5000/api/course';
-  baseUrl: string = 'http://localhost:32236/api/course';
+  baseUrl: string = 'http://localhost:32236/api/Course';
 
   constructor(private http: HttpClient) {}
 
   getCourses() {
-    return this.http.get(this.baseUrl);
+    return this.http.get(this.baseUrl + '/ALL');
   }
 
   // http://localhost:26651/api/Course/GetById/4
