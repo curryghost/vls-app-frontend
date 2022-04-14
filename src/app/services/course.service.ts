@@ -6,13 +6,13 @@ import { Course } from '../model/course.model';
   providedIn: 'root',
 })
 export class CourseService {
-  // baseUrl: string = 'http://localhost:5000/api/course';
-  baseUrl: string = 'http://localhost:32236/api/Course';
+  baseUrl: string = 'http://localhost:5000/api/course';
+  // baseUrl: string = 'http://localhost:32236/api/Course';
 
   constructor(private http: HttpClient) {}
 
   getCourses() {
-    return this.http.get(this.baseUrl + '/ALL');
+    return this.http.get(this.baseUrl + '/all');
   }
 
   // http://localhost:26651/api/Course/GetById/4

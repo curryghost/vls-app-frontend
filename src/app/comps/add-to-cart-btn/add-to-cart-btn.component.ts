@@ -28,7 +28,7 @@ export class AddToCartBtnComponent implements OnInit {
       return "Added to cart"
     } else {
       const course = this.courseState.getCourse(this.id)
-      return`\$${course?.courseCost.toFixed(2)}`
+      return`\$${course?.cost.toFixed(2)}`
     }
   }
   addToCart() {

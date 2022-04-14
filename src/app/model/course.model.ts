@@ -1,13 +1,13 @@
 import { Author } from './author.model';
 
 export class Course {
-  courseId?: number;
-  courseName?: string;
-  courseDescription?: string;
-  courseStart?: string;
-  courseEnd?: string;
-  courseCost?: number;
-  courseVideo?: string;
+  id?: number;
+  name?: string;
+  description?: string;
+  start?: string;
+  end?: string;
+  cost?: number;
+  video?: string;
   authorId?: number;
   author?: Author;
 }

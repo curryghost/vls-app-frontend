@@ -2,8 +2,8 @@
   <div class="card-container">
     <mat-card *ngFor="let course of cartState.cart">
       <div class="left-card">
-        <h4>{{ course.courseName }}</h4>
-        <p>{{ course.courseCost | currency }}</p>
+        <h4>{{ course.name }}</h4>
+        <p>{{ course.cost | currency }}</p>
       </div>
       <div class="image">
         <img

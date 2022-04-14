@@ -17,7 +17,7 @@ export class CartListComponent implements OnInit {
   totalPrice(){
     let totalPrice = 0;
     this.cartState.cart.forEach(course => {
-    course.courseCost && (totalPrice += course.courseCost);
+    course.cost && (totalPrice += course.cost);
     })
     return totalPrice
   }

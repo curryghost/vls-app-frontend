@@ -11,6 +11,7 @@ export class CourseStateService {
   constructor(private courseService: CourseService) {
     this.courseService.getCourses().subscribe((res) => {
       this.courses = res;
+      console.log(res)
     });
   }
 
@@ -21,8 +22,8 @@ export class CourseStateService {
   }
 
   getDuration(course: Course) {
-    const startDate = course.courseStart;
-    const endDate = course.courseEnd;
+    const startDate = course.start;
+    const endDate = course.end;
 
     const startDateArr = startDate?.split(',')[0].split('-');
     const endDateArr = endDate?.split(',')[0].split('-');
@@ -38,12 +39,12 @@ export class CourseStateService {
   }
 
   getCourse(id: number) {
-    return this.courses?.find((key: Course) => key.courseId == id);
+    return this.courses?.find((key: Course) => key.id == id);
   }
 
   // get the youtube thumbnail url from the video url
   getThumbnail(course: Course) {
-    const courseVideoUrl = course.courseVideo;
+    const courseVideoUrl = course.video;
 
     // http://img.youtube.com/vi/<insert-youtube-video-id-here>/default.jpg
 

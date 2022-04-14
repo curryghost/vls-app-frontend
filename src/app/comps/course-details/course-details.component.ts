@@ -19,11 +19,10 @@ export class CourseDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const routeParams = this.route.snapshot.paramMap;
-    const courseIdFromFromRoute = Number(routeParams.get('courseId'));
+    const courseIdFromFromRoute = Number(routeParams.get('id'));
 
     //fetches the product with the courseId in route
-    this.course = this.courseState.courses.find(
-      (course: Course) => course.courseId === courseIdFromFromRoute
-    );
+    this.course = this.courseState.getCourse(courseIdFromFromRoute)
+    console.log(courseIdFromFromRoute)
   }
 }

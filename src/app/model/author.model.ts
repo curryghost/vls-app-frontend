@@ -1,5 +1,6 @@
 export class Author {
-  authorId?: number;
-  authorName?: string;
-  emailAddress?: string;
+  id?: number;
+  name?: string;
+  email?: string;
+  specialization?: string;
 }

@@ -13,11 +13,11 @@
         <li class="author">
           <a href="#">{{ course.author?.name }}</a>
         </li>
-        <li class="date">Course begins: {{ course.courseStart }}</li>
+        <li class="date">Course begins: {{ course.name }}</li>
       </ul>
     </div>
     <div class="description">
-      <h1 class="title">{{ course.courseName }}</h1>
+      <h1 class="title">{{ course.name }}</h1>
       <h2 class="duration">
         Duration: {{ courseState.getDuration(course) }} days
       </h2>
@@ -25,7 +25,7 @@
         {{ course.courseDescription | summary }}
       </p>
       <p class="read-more">
-        <button [routerLink]="['/course-signup/', course.courseId]">
+        <button [routerLink]="['/course-signup/', course.id]">
           Learn more
         </button>
       </p>
