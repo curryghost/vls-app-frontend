@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Course } from 'src/app/model/course.model';
+import { CourseStateService } from 'src/app/services/course-state.service';
 
 @Component({
   selector: 'app-course-details',
@@ -6,7 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./course-details.component.scss'],
 })
 export class CourseDetailsComponent implements OnInit {
-  constructor() {}
+  course: Course | undefined;
+  constructor(
+    private courseState: CourseStateService,
+    private route: ActivatedRoute
+  ) {
+    console.log('constructor() has obtained the course state babyyy.');
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const routeParams = this.route.snapshot.paramMap;
+    const courseIdFromFromRoute = Number(routeParams.get('courseId'));
+
+    //fetches the product with the courseId in route
+    this.course = this.courseState.courses.find(
+      (course) => course.courseId === +courseIdFromFromRoute
+    );
+  }
 }
