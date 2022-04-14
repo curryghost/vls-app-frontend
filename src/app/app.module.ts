@@ -16,6 +16,8 @@ import { LoginFormComponent } from './comps/login-form/login-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SummaryPipe } from './pipes/summary.pipe';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { CartListComponent } from './comps/cart-list/cart-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { SummaryPipe } from './pipes/summary.pipe';
     CourseDetailsComponent,
     CourseSignupComponent,
     LoginFormComponent,
-    SummaryPipe
+    SummaryPipe,
+    CheckoutComponent,
+    CartListComponent
   ],
   imports: [
     BrowserModule,

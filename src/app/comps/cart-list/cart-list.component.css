@@ -1,0 +1,18 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+    margin: auto;
+    width: 35rem;
+}
+
+mat-card {
+    width: 15rem;
+}
+
+.total-price{
+    display: flex;
+    border-top: 1px solid #000;
+    margin: 1rem;
+}
