@@ -17,7 +17,12 @@
 
 .course-about,
 .course-instructor,
-.course-syllabus {
+.course-faq {
   margin: 1rem 2rem;
   padding: 1em 1.5em;
+}
+
+mat-expansion-panel {
+  margin: 0 2rem;
+  margin-bottom: 1em;
 }

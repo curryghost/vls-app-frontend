@@ -10,6 +10,7 @@ import { CourseStateService } from 'src/app/services/course-state.service';
 })
 export class CourseDetailsComponent implements OnInit {
   course: Course | undefined;
+  panelOpenState = false;
   constructor(
     private courseState: CourseStateService,
     private route: ActivatedRoute
@@ -22,7 +23,7 @@ export class CourseDetailsComponent implements OnInit {
     const courseIdFromFromRoute = Number(routeParams.get('id'));
 
     //fetches the product with the courseId in route
-    this.course = this.courseState.getCourse(courseIdFromFromRoute)
-    console.log(courseIdFromFromRoute)
+    this.course = this.courseState.getCourse(courseIdFromFromRoute);
+    console.log(courseIdFromFromRoute);
   }
 }
