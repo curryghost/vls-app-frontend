@@ -1,14 +1,24 @@
 <div class="cart-list-container" *ngIf="cartState.cart.length > 0">
   <div class="card-container">
     <mat-card *ngFor="let course of cartState.cart">
-      <h4>{{ course.courseName }}</h4>
-      <p>{{ course.courseCost | currency }}</p>
+      <div class="left-card">
+        <h4>{{ course.courseName }}</h4>
+        <p>{{ course.courseCost | currency }}</p>
+      </div>
+      <div class="image">
+        <img
+          src="https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg"
+          alt=""
+        />
+      </div>
     </mat-card>
   </div>
   <div class="total-price">
     <p>Total Price: {{ totalPrice() | currency }}</p>
     <button mat-raised-button>Check Out</button>
   </div>
+  <!-- Compensate for position fix bottom-->
+  <div style="height: 50px; margin: 1.5rem"></div>
 </div>
 <div *ngIf="cartState.cart.length == 0" class="empty">
   <h1>Cart is currently empty</h1>

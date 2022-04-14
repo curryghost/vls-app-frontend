@@ -25,16 +25,15 @@ export class AddToCartBtnComponent implements OnInit {
   getPrice(){
     if (this.state.getByID(this.id)){
       this.toggleBtn = true
-      this.addToCartMsg = "Added to cart"
+      return "Added to cart"
     } else {
       const course = this.courseState.getCourse(this.id)
-      this.addToCartMsg =`\$${course?.courseCost.toFixed(2)}`
+      return`\$${course?.courseCost.toFixed(2)}`
     }
   }
   addToCart() {
     this.state.incrementCounter();
-    this.toggleBtn = true;
-    this.addToCartMsg = 'Added to Cart';
+    this.toggleBtn = true
     const course = this.courseState.getCourse(this.id)
     this.state.addToCart(course)
   }

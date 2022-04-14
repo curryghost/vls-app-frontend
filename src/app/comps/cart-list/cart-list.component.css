@@ -4,15 +4,53 @@
     gap: 1rem;
     padding: 2rem;
     margin: auto;
-    width: 35rem;
+    width: 100%;
+    justify-content: center;
 }
 
 mat-card {
+    display: flex;
+    padding: .5rem;
     width: 15rem;
+    justify-content: space-between;
 }
 
+
+.image {
+    width:40%;
+}
+.image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 .total-price{
+    position: fixed;
+    bottom: 0px;
     display: flex;
     border-top: 1px solid #000;
+    align-items: center;
+    padding: 10px 4rem;
+    padding-bottom: 40px;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--primary-dark);
+}
+.total-price p{
     margin: 1rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+.total-price button{
+    background-color: #db4523;
+    color: #fff;
+}
+
+@media screen and (min-width: 560px ) {
+    .card-container {
+        width: 35rem;
+        justify-content: start;
+    }
+    
 }
