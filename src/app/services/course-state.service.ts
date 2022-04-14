@@ -8,10 +8,14 @@ import { CourseService } from './course.service';
 export class CourseStateService {
   courses: any;
 
-  constructor(private courseService: CourseService) {}
+  constructor(private courseService: CourseService) {
+    this.courseService.getCourses().subscribe(res => {
+      this.courses = res;
+    });
+  }
 
   initialize() {
-    this.courseService.getCourses().subscribe((res) => {
+    this.courseService.getCourses().subscribe(res => {
       this.courses = res;
     });
   }
@@ -34,6 +38,6 @@ export class CourseStateService {
   }
 
   getCourse(id: number) {
-    return this.courses.find((key: any) => key.courseId == id);
+    return this.courses?.find((key: Course) => key.courseId == id)
   }
 }
