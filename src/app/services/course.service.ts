@@ -6,8 +6,8 @@ import { Course } from '../model/course.model';
   providedIn: 'root',
 })
 export class CourseService {
-  // baseUrl: string = 'http://localhost:5000/api/course';
-  baseUrl: string = 'http://localhost:32236/api/course';
+  baseUrl: string = 'http://localhost:5000/api/course';
+  // baseUrl: string = 'http://localhost:32236/api/course';
 
   constructor(private http: HttpClient) {}
 
