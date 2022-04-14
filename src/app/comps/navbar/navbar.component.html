@@ -35,14 +35,16 @@
           <mat-icon>menu</mat-icon>
         </button>
         <!-- Cart Icon-->
-        <button mat-icon-button class="cart">
-          <mat-icon
-            [matBadge]="state.counter"
-            [matBadgeHidden]="state.toggleCounter"
-            matBadgeColor="warn"
-            >shopping_cart</mat-icon
-          >
-        </button>
+        <a routerLink="/checkout">
+          <button mat-icon-button class="cart">
+            <mat-icon
+              [matBadge]="state.counter"
+              [matBadgeHidden]="state.toggleCounter"
+              matBadgeColor="warn"
+              >shopping_cart</mat-icon
+            >
+          </button>
+        </a>
       </div>
     </div>
   </mat-toolbar>
