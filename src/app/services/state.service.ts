@@ -10,20 +10,32 @@ export class StateService {
   cart: Course[] = []
 
   constructor() { 
+    this.getLocalStorage()
     this.counter == 0 && (this.toggleCounter = true)
-
+    console.log(this.cart)
   }
+    getLocalStorage(){
+      localStorage.getItem('cart') && this.cart.length == 0 && 
+        this.cart.push(...JSON.parse(localStorage.getItem('cart')!));
+      this.counter = this.cart.length;
+    }  
+
+    setLocalStorage(){
+      localStorage.setItem('cart', JSON.stringify(this.cart))
+    }
+
     incrementCounter(){
       this.counter += 1;
       this.counter > 0 && (this.toggleCounter = false);
     }
   
     addToCart(course: Course){
-      this.cart.push(course)
+      this.cart.push(course);
+      this.setLocalStorage();
     }
 
     getByID(id: number){
-      return this.cart.find(course => course.id == id)
+      return this.cart.find(course => course.id == id);
     }
 
     remove(id: number){
@@ -31,5 +43,6 @@ export class StateService {
       this.cart.splice(index, 1);
       this.counter -= 1;
       this.counter == 0 && (this.toggleCounter = true);
+      this.setLocalStorage();
     }
 }

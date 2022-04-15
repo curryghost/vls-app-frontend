@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseStateService } from './services/course-state.service';
+import { StateService } from './services/state.service';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +10,7 @@ import { CourseStateService } from './services/course-state.service';
 export class AppComponent implements OnInit{
   title = 'vls-app-frontend';
 
-  constructor(private courseState: CourseStateService){}
-
+  constructor(private courseState: CourseStateService, private state: StateService){}
   ngOnInit(): void {
     this.courseState.initialize();
   }

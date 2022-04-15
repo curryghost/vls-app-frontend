@@ -19,6 +19,7 @@ import { SummaryPipe } from './pipes/summary.pipe';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { CartListComponent } from './comps/cart-list/cart-list.component';
 import { RemoveComponent } from './comps/cart-list/remove/remove.component';
+import { CheckoutBtnComponent } from './comps/cart-list/checkout-btn/checkout-btn.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { RemoveComponent } from './comps/cart-list/remove/remove.component';
     SummaryPipe,
     CheckoutComponent,
     CartListComponent,
-    RemoveComponent
+    RemoveComponent,
+    CheckoutBtnComponent
   ],
   imports: [
     BrowserModule,

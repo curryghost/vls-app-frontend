@@ -18,7 +18,7 @@ export class CourseDetailsComponent implements OnInit {
     console.log('constructor() has obtained the course state babyyy.');
   }
 
-  //refactor code to display on refresh  
+  //refactor code to load display on refresh  
   getCourse(){
     const routeParams = this.route.snapshot.paramMap;
     const courseIdFromFromRoute = Number(routeParams.get('id'));

@@ -19,16 +19,15 @@ export class AddToCartBtnComponent implements OnInit {
     public courseState: CourseStateService,
     private route: ActivatedRoute
   ) {
-    this.route.params.subscribe(param => this.id = +param['id'])
-    this.getPrice()
   }
   getPrice(){
+    this.route.params.subscribe(param => this.id = +param['id'])
     if (this.state.getByID(this.id)){
       this.toggleBtn = true
       return "Added to cart"
     } else {
       const course = this.courseState.getCourse(this.id)
-      return`\$${course?.cost.toFixed(2)}`
+      return`\$${course.cost.toFixed(2)}`
     }
   }
   addToCart() {
@@ -39,5 +38,6 @@ export class AddToCartBtnComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getPrice();
   }
 }

@@ -7,21 +7,49 @@
 // have to load a single css file for Angular Material in your app.
 // Be sure that you only ever include this mixin once!
 @include mat.core();
+/* For use in src/lib/core/theming/_palette.scss */
+$custom-primary: (
+    50 : #e0e2ec,
+    100 : #b3b7d1,
+    200 : #8088b2,
+    300 : #4d5893,
+    400 : #26347b,
+    500 : #001064,
+    600 : #000e5c,
+    700 : #000c52,
+    800 : #000948,
+    900 : #000536,
+    A100 : #6e72ff,
+    A200 : #3b41ff,
+    A400 : #080fff,
+    A700 : #0007ed,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #ffffff,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
 
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$vls-app-frontend-primary: mat.define-palette(mat.$indigo-palette, 800);
-$vls-app-frontend-accent: mat.define-palette(
-  mat.$deep-purple-palette,
-  A200,
-  A400
-);
-
-$custom-secondary: mat.define-palette(mat.$amber-palette, 500);
+$vls-app-frontend-primary: mat.define-palette($custom-primary);
+$vls-app-frontend-accent: mat.define-palette(mat.$amber-palette, 600);
 
 // The warn palette is optional (defaults to red).
-$vls-app-frontend-warn: mat.define-palette(mat.$amber-palette);
+$vls-app-frontend-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
@@ -29,11 +57,12 @@ $vls-app-frontend-theme: mat.define-light-theme(
   (
     color: (
       primary: $vls-app-frontend-primary,
-      accent: $custom-secondary,
+      accent: $vls-app-frontend-accent,
       warn: $vls-app-frontend-warn,
     ),
   )
 );
+
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component

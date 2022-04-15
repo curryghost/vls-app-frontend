@@ -9,11 +9,10 @@
 }
 
 mat-card {
-    border-left: var(--secondary-dark) 1rem solid;
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 20rem;
     height: 10rem;
     padding: .5rem;
     overflow: hidden;
