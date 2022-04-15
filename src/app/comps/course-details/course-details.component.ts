@@ -10,6 +10,7 @@ import { CourseStateService } from 'src/app/services/course-state.service';
 })
 export class CourseDetailsComponent implements OnInit {
   course: Course | undefined;
+  panelOpenState = false;
   constructor(
     private courseState: CourseStateService,
     private route: ActivatedRoute

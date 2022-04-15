@@ -8,53 +8,126 @@
   <mat-tab-group>
     <mat-tab>
       <ng-template mat-tab-label>
-        <mat-icon class="example-tab-icon">info</mat-icon>
-        About
+        <mat-icon class="example-tab-icon">info</mat-icon>&nbsp; About
       </ng-template>
-      <div class="course-about mat-elevation-z4">
-        <h4>About this Course</h4>
+      <mat-card class="course-about mat-elevation-z4">
+        <mat-card-title> About this Course </mat-card-title>
         <p>
           {{ course.description }}
         </p>
-      </div>
+      </mat-card>
     </mat-tab>
 
     <mat-tab>
       <ng-template mat-tab-label>
-        <mat-icon class="example-tab-icon">person_outline</mat-icon>
+        <mat-icon class="example-tab-icon">person_outline</mat-icon>&nbsp;
         Instructor
       </ng-template>
-
-      <div class="course-instructor mat-elevation-z4">
-        <a href="#"></a>
-        <p>subject department</p>
+      <mat-card class="course-instructor mat-elevation-z4">
+        <mat-card-title>Get to know your instructor</mat-card-title>
+        <h3>
+          <a href="#">{{ course.author }}</a>
+        </h3>
+        <p>specializtion here</p>
         <div class="student-number">
-          <mat-icon>people</mat-icon>
+          <mat-icon>people</mat-icon>&nbsp;
           <p><b>1000</b> Students</p>
         </div>
         <div class="course-number">
-          <mat-icon></mat-icon>
+          <mat-icon>library_books</mat-icon>&nbsp;
           <p><b>1000000</b> Courses</p>
         </div>
-      </div>
+      </mat-card>
     </mat-tab>
 
     <mat-tab>
       <ng-template mat-tab-label>
-        <mat-icon class="example-tab-icon">school</mat-icon>
-        Syllabus
+        <mat-icon class="example-tab-icon">question_answer</mat-icon>&nbsp; FAQ
       </ng-template>
 
-      <div class="course-syllabus mat-elevation-z4">
-        <h5>What you will learn from this course</h5>
-        <div class="quiz">
-          <div class="quiz-number">1</div>
-          <div class="quiz-description">
-            <p>Iterate quizes here</p>
-          </div>
-        </div>
-      </div>
-      <div class="course-faq"></div>
+      <mat-accordion class="course-faq">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              When will I have access to the course lectures and assignments?
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>
+            Once you enroll, you’ll have access to all videos and assignments.
+          </p>
+        </mat-expansion-panel>
+        <mat-expansion-panel
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false"
+        >
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Do I need to pay for this course?
+            </mat-panel-title>
+            <!-- <mat-panel-description>
+              Currently I am {{ panelOpenState ? "open" : "closed" }}
+            </mat-panel-description> -->
+          </mat-expansion-panel-header>
+          <p>
+            Yes. This is a paid course, you can add this course to your cart by
+            clicking on the price button above.
+          </p>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Can I earn a certificate in this course?
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>
+            Yes. Certificates, credentials, and/or reports are awarded in
+            connection with this course.
+          </p>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title> How do I select a course? </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>
+            Visit the course catalog to browse our offerings. In addition to
+            searching by course names, you can also search by subject to ensure
+            you find a course that reflects your interests. Though it is not
+            required, we encourage those who have not studied the subject before
+            to consider taking a related basics course first to get a solid
+            grounding in the discipline before exploring more specific
+            disciplines.
+          </p>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Can I take more than one course at a time?
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>
+            If you are new to online learning, we recommend that you begin with
+            one course. As our courses are offered frequently throughout the
+            year, you can always come back and continue your studies with one or
+            more topics.
+          </p>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              I am a high school student, can I join?
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>
+            Courses are open to all students 18 years or older. If you are under
+            18 years old, please contact us at thisisnotanemail@email.com to
+            discuss further.
+          </p>
+        </mat-expansion-panel>
+      </mat-accordion>
     </mat-tab>
   </mat-tab-group>
 </div>
