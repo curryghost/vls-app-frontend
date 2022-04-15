@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Course } from '../model/course.model';
+import { Author } from '../model/author.model';
 import { CourseService } from './course.service';
 
 @Injectable({
@@ -7,6 +8,7 @@ import { CourseService } from './course.service';
 })
 export class CourseStateService {
   courses: any;
+  authors: any;
 
   constructor(private courseService: CourseService) {
     this.courseService.getCourses().subscribe((res) => {
@@ -42,14 +44,21 @@ export class CourseStateService {
     return this.courses?.find((key: Course) => key.id == id);
   }
 
+  // getCourseAuthor(course: Course) {
+  //   const authorId = course.authorId;
+  //   const author = this.getAuthor(authorId?);
+  // }
+
+  // getAuthor(authorId: number) {
+  //   return this.authors?.find((key: Author) => key.id == authorId);
+  // }
+
   // get the youtube thumbnail url from the video url
   getThumbnail(course: Course) {
-    const courseVideoUrl = course.video;
-
     // console.log(courseVideoUrl);
     // https://www.youtube.com/watch?v=kB8pG1-dIAA
     // http://img.youtube.com/vi/<insert-youtube-video-id-here>/sddefault.jpg
-
+    const courseVideoUrl = course.video;
     const videoId = courseVideoUrl?.split('=')[1];
 
     if (videoId?.length == 11) {
@@ -62,12 +71,10 @@ export class CourseStateService {
   }
 
   getHqThumbnail(course: Course) {
-    const courseVideoUrl = course.video;
-
     // console.log(courseVideoUrl);
     // https://www.youtube.com/watch?v=kB8pG1-dIAA
     // http://img.youtube.com/vi/<insert-youtube-video-id-here>/hqdefault.jpg
-
+    const courseVideoUrl = course.video;
     const videoId = courseVideoUrl?.split('=')[1];
 
     if (videoId?.length == 11) {
