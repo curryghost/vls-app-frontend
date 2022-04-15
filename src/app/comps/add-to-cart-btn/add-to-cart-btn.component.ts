@@ -9,7 +9,7 @@ import { StateService } from 'src/app/services/state.service';
   styleUrls: ['./add-to-cart-btn.component.css'],
 })
 export class AddToCartBtnComponent implements OnInit {
-  addToCartMsg = "Add to Cart";
+  addToCartMsg = 'Add to Cart';
   course: any;
   toggleBtn = false;
   id!: number;
@@ -19,25 +19,27 @@ export class AddToCartBtnComponent implements OnInit {
     public courseState: CourseStateService,
     private route: ActivatedRoute
   ) {
+    this.route.params.subscribe((param) => (this.id = +param['id']));
+    this.getPrice();
   }
-  getPrice(){
-    this.route.params.subscribe(param => this.id = +param['id'])
-    if (this.state.getByID(this.id)){
-      this.toggleBtn = true
-      return "Added to cart"
+  getPrice() {
+    const course = this.courseState.getCourse(this.id);
+
+    if (this.state.getByID(this.id)) {
+      this.toggleBtn = true;
+      return 'Added to cart';
+    } else if (course?.cost.toFixed(2) == 0.0) {
+      return 'Enroll for Free';
     } else {
-      const course = this.courseState.getCourse(this.id)
-      return`\$${course.cost.toFixed(2)}`
+      return `Enroll for \$${course?.cost.toFixed(2)}`;
     }
   }
   addToCart() {
     this.state.incrementCounter();
-    this.toggleBtn = true
-    const course = this.courseState.getCourse(this.id)
-    this.state.addToCart(course)
+    this.toggleBtn = true;
+    const course = this.courseState.getCourse(this.id);
+    this.state.addToCart(course);
   }
 
-  ngOnInit(): void {
-    this.getPrice();
-  }
+  ngOnInit(): void {}
 }

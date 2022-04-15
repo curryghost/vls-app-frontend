@@ -12,25 +12,24 @@ export class CourseDetailsComponent implements OnInit {
   course: Course | undefined;
   panelOpenState = false;
   constructor(
-    private courseState: CourseStateService,
+    public courseState: CourseStateService,
     private route: ActivatedRoute
   ) {
     console.log('constructor() has obtained the course state babyyy.');
   }
 
-  //refactor code to load display on refresh  
-  getCourse(){
+  //refactor code to display on refresh
+  getCourse() {
     const routeParams = this.route.snapshot.paramMap;
     const courseIdFromFromRoute = Number(routeParams.get('id'));
 
     //fetches the product with the courseId in route
-    return this.courseState.getCourse(courseIdFromFromRoute)
+    return this.courseState.getCourse(courseIdFromFromRoute);
   }
 
   ngOnInit(): void {
     // const routeParams = this.route.snapshot.paramMap;
     // const courseIdFromFromRoute = Number(routeParams.get('id'));
-
     // //fetches the product with the courseId in route
     // this.course = this.courseState.getCourse(courseIdFromFromRoute)
   }

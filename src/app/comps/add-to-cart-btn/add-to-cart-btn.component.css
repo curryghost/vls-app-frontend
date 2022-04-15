@@ -1,16 +1,17 @@
 .add-to-cart {
-    color: white;
-    transition: color 200ms ease-in, background-color 200ms ease-in;
-    font-size: .7rem;
-    width: 6.5rem;
+  color: white;
+  transition: color 200ms ease-in, background-color 200ms ease-in;
+  font-size: 0.7rem;
+  width: 7.5rem;
+  color: black;
 }
 
 .add-to-cart:hover {
-    color: yellow;
-    background-color: lightcoral;
+  color: yellow;
+  background-color: lightcoral;
 }
 
 .add-to-cart:disabled {
-    color: #bbbaba;
-    background-color: lightcoral;
+  color: #bbbaba;
+  background-color: lightcoral;
 }

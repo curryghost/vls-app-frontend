@@ -11,7 +11,7 @@ export class CourseStateService {
   constructor(private courseService: CourseService) {
     this.courseService.getCourses().subscribe((res) => {
       this.courses = res;
-      console.log(res)
+      console.log(res);
     });
   }
 
@@ -46,35 +46,35 @@ export class CourseStateService {
   getThumbnail(course: Course) {
     const courseVideoUrl = course.video;
 
-    // http://img.youtube.com/vi/<insert-youtube-video-id-here>/default.jpg
+    // console.log(courseVideoUrl);
+    // https://www.youtube.com/watch?v=kB8pG1-dIAA
+    // http://img.youtube.com/vi/<insert-youtube-video-id-here>/sddefault.jpg
 
-    // app.controller('MyCtrl', ['$scope',
-    //   function($scope) {
-    //     $scope.inputs = [];
+    const videoId = courseVideoUrl?.split('=')[1];
 
-    //     $scope.addInput = function() {
-    //       $scope.inputs.push({
-    //         field: ''
-    //       });
-    //     }
+    if (videoId?.length == 11) {
+      const thumbnailUrl =
+        'http://img.youtube.com/vi/' + videoId + '/sddefault.jpg';
+      return thumbnailUrl;
+    } else {
+      return '';
+    }
+  }
 
-    //     $scope.removeInput = function(index) {
-    //       $scope.inputs.splice(index, 1);
-    //     }
+  getHqThumbnail(course: Course) {
+    const courseVideoUrl = course.video;
 
-    //     $scope.set2 = function($ayd) {
-    //       var thumb = getParameterByName(this.input.ayd, 'v'),
-    //         url = 'http://img.youtube.com/vi/' + thumb + '/default.jpg';
-    //       this.thumb = url
-    //     }
+    // console.log(courseVideoUrl);
+    // https://www.youtube.com/watch?v=kB8pG1-dIAA
+    // http://img.youtube.com/vi/<insert-youtube-video-id-here>/hqdefault.jpg
 
-    //     function getParameterByName(url, name) {
-    //       name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-    //       var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
-    //         results = regex.exec(url);
-    //       return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
-    //     }
-    //   }
-    // ]);
+    const videoId = courseVideoUrl?.split('=')[1];
+
+    if (videoId?.length == 11) {
+      const thumbnailUrl = 'http://img.youtube.com/vi/' + videoId + '/0.jpg';
+      return thumbnailUrl;
+    } else {
+      return '';
+    }
   }
 }
