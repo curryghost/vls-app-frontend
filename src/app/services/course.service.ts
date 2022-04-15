@@ -15,7 +15,6 @@ export class CourseService {
     return this.http.get(this.baseUrl + '/all');
   }
 
-  // http://localhost:26651/api/Course/GetById/4
   getCourseById(id: number) {
     return this.http.get(this.baseUrl + '/GetById/' + id);
   }

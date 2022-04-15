@@ -1,7 +1,7 @@
 <h2 id="courses-title">Courses</h2>
 
 <div id="course-section">
-  <div class="course-card" *ngFor="let course of courseState.courses">
+  <div class="course-card" *ngFor="let course of finalFilteredCourses()">
     <div class="meta">
       <div
         class="photo"
@@ -11,7 +11,9 @@
       ></div>
       <ul class="details">
         <li class="author">
-          <a href="#">{{ course.authorId?.name }}</a>
+          <a href="#">{{
+            courseState.getCourseAuthor(course?.authorId)?.name
+          }}</a>
         </li>
         <li class="date">Course begins: {{ course.name }}</li>
       </ul>

@@ -23,6 +23,30 @@
           </button>
         </a>
       </div>
+
+      <!-- Search bar -->
+      <mat-form-field class="search-field" appearance="fill">
+        <mat-label class="search-label"
+          ><mat-icon class="search-icon">search</mat-icon> Search</mat-label
+        >
+        <input
+          matInput
+          type="text"
+          [(ngModel)]="searchValue"
+          #input
+          (keyup)="this.courseState.filterQuery(input)"
+        />
+        <button
+          *ngIf="searchValue"
+          matSuffix
+          mat-icon-button
+          aria-label="Clear"
+          (click)="searchValue = ''"
+        >
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+
       <!-- Login Button -->
       <div>
         <a routerLink="/login" routerLinkActive="active-login" class="login">

@@ -13,7 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { CourseDetailsComponent } from './comps/course-details/course-details.component';
 import { CourseSignupComponent } from './pages/course-signup/course-signup.component';
 import { LoginFormComponent } from './comps/login-form/login-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
@@ -36,7 +36,7 @@ import { CheckoutBtnComponent } from './comps/cart-list/checkout-btn/checkout-bt
     CheckoutComponent,
     CartListComponent,
     RemoveComponent,
-    CheckoutBtnComponent
+    CheckoutBtnComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +44,8 @@ import { CheckoutBtnComponent } from './comps/cart-list/checkout-btn/checkout-bt
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

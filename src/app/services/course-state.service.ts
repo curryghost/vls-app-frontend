@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Course } from '../model/course.model';
 import { Author } from '../model/author.model';
 import { CourseService } from './course.service';
+import { AuthorService } from './author.service';
 
 @Injectable({
   providedIn: 'root',
@@ -9,17 +10,30 @@ import { CourseService } from './course.service';
 export class CourseStateService {
   courses: any;
   authors: any;
+  filterString = '';
+  filteredCourses: Array<any> = [];
 
-  constructor(private courseService: CourseService) {
+  constructor(
+    private courseService: CourseService,
+    private authorService: AuthorService
+  ) {
     this.courseService.getCourses().subscribe((res) => {
       this.courses = res;
       console.log(res);
     });
+
+    this.authorService.getAuthors().subscribe((res) => {
+      this.authors = res;
+      console.log(res);
+    });
   }
 
-  initialize() {
+  initialize(): void {
     this.courseService.getCourses().subscribe((res) => {
       this.courses = res;
+    });
+    this.authorService.getAuthors().subscribe((res) => {
+      this.authors = res;
     });
   }
 
@@ -44,14 +58,14 @@ export class CourseStateService {
     return this.courses?.find((key: Course) => key.id == id);
   }
 
-  // getCourseAuthor(course: Course) {
-  //   const authorId = course.authorId;
-  //   const author = this.getAuthor(authorId?);
-  // }
+  getCourseAuthor(authorId: number) {
+    const author = this.getAuthor(authorId);
+    return author;
+  }
 
-  // getAuthor(authorId: number) {
-  //   return this.authors?.find((key: Author) => key.id == authorId);
-  // }
+  getAuthor(authorId: number) {
+    return this.authors?.find((key: Author) => key.id == authorId);
+  }
 
   // get the youtube thumbnail url from the video url
   getThumbnail(course: Course) {
@@ -83,5 +97,26 @@ export class CourseStateService {
     } else {
       return '';
     }
+  }
+
+  // courseSearch(searchValue: string) {
+  //   const courseList = this.courses;
+  //   let filteredCourses = [];
+
+  //   courseList.forEach((course: any) => {
+  //     const isVisible = course.name.toLowerCase().includes(searchValue)
+
+  //     course.element
+  //   });
+  // }
+
+  filterQuery(query: any) {
+    this.filteredCourses.splice(0, this.filteredCourses.length);
+    this.filteredCourses.push(
+      ...this.courses.filter((course: any) =>
+        course.name.toLowerCase().includes(query.value.toLowerCase())
+      )
+    );
+    console.log(this.filteredCourses);
   }
 }
