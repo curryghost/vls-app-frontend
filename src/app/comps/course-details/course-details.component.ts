@@ -18,11 +18,20 @@ export class CourseDetailsComponent implements OnInit {
     console.log('constructor() has obtained the course state babyyy.');
   }
 
-  ngOnInit(): void {
+  //refactor code to display on refresh  
+  getCourse(){
     const routeParams = this.route.snapshot.paramMap;
     const courseIdFromFromRoute = Number(routeParams.get('id'));
 
     //fetches the product with the courseId in route
-    this.course = this.courseState.getCourse(courseIdFromFromRoute)
+    return this.courseState.getCourse(courseIdFromFromRoute)
+  }
+
+  ngOnInit(): void {
+    // const routeParams = this.route.snapshot.paramMap;
+    // const courseIdFromFromRoute = Number(routeParams.get('id'));
+
+    // //fetches the product with the courseId in route
+    // this.course = this.courseState.getCourse(courseIdFromFromRoute)
   }
 }

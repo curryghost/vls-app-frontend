@@ -1,7 +1,7 @@
-<div id="course-details-section" *ngIf="course">
+<div id="course-details-section" *ngIf="getCourse()">
   <div class="hero-bar">
-    <h2>{{ course.name }}</h2>
-    <h5>By: {{ course.author }}</h5>
+    <h2>{{ getCourse().name }}</h2>
+    <h5>By: {{ getCourse()?.author }}</h5>
     <app-add-to-cart-btn></app-add-to-cart-btn>
   </div>
 
@@ -13,7 +13,7 @@
       <mat-card class="course-about mat-elevation-z4">
         <mat-card-title> About this Course </mat-card-title>
         <p>
-          {{ course.description }}
+          {{ getCourse().description }}
         </p>
       </mat-card>
     </mat-tab>
@@ -26,7 +26,7 @@
       <mat-card class="course-instructor mat-elevation-z4">
         <mat-card-title>Get to know your instructor</mat-card-title>
         <h3>
-          <a href="#">{{ course.author }}</a>
+          <a href="#">{{ getCourse().author }}</a>
         </h3>
         <p>specializtion here</p>
         <div class="student-number">

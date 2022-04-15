@@ -17,7 +17,6 @@ export class RemoveComponent implements OnInit {
 
   remove(){
     this.state.remove(this.courseId);
-    console.log(this.state.cart)
   }
 
 }
