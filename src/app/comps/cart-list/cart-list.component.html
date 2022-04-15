@@ -2,10 +2,12 @@
   <div class="card-container">
     <mat-card *ngFor="let course of cartState.cart">
       <div class="top-card">
-        <img
-          src="https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg"
-          alt=""
-        />
+        <div
+          class="photo"
+          [style.background-image]="
+            'url(' + courseState.getThumbnail(course) + ')'
+          "
+        ></div>
         <app-remove [courseId]="course.id"></app-remove>
       </div>
       <div class="bottom-card">

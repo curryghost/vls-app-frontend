@@ -1,111 +1,116 @@
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem;
-    margin: auto;
-    width: 100%;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  margin: auto;
+  width: 100%;
+  justify-content: center;
 }
 
 mat-card {
-    border-left: var(--secondary-dark) 1rem solid;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 10rem;
-    padding: .5rem;
-    overflow: hidden;
-    background-image: linear-gradient(#c2c5cf, #fff) !important;
+  border-left: var(--secondary-dark) 1rem solid;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 10rem;
+  padding: 0.5rem;
+  overflow: hidden;
+  background-image: linear-gradient(#c2c5cf, #fff) !important;
 }
-.top-card{
-    display: flex;
-    height: 50%;
-    width: 100%;
+.top-card {
+  display: flex;
+  height: 50%;
+  width: 100%;
 }
-.top-card img{
-    width: 8rem;
-    height: 100%;
-    object-fit: cover;
-    opacity: .8;
+.top-card .photo {
+  width: 8rem;
+  background-size: 8rem;
+  background-repeat: no-repeat;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
 }
-.bottom-card{
-    display: flex;
-    height: 50%;
-    justify-content: space-between;
-    padding-top: 1rem;
+.bottom-card {
+  display: flex;
+  height: 50%;
+  justify-content: space-between;
+  padding-top: 1rem;
 }
-.bottom-card h4{
-    font-weight: 400;
-    line-height: 1rem;
-    flex-grow: 2;
+.bottom-card h4 {
+  font-weight: 400;
+  line-height: 1rem;
+  flex-grow: 2;
 }
-.bottom-card p{
-    padding-top: 2rem;
-    font-weight: 500;
-    color: #e63131;
+.bottom-card p {
+  padding-top: 2rem;
+  font-weight: 500;
+  color: #e63131;
 }
-.total-price{
-    position: fixed;
-    bottom: 0px;
-    display: flex;
-    border-top: 1px solid #000;
-    align-items: center;
-    padding: 10px;
-    padding-bottom: 40px;
-    justify-content: space-between;
-    width: 100%;
-    background-color: var(--primary-dark);
+.total-price {
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  border-top: 1px solid #000;
+  align-items: center;
+  padding: 10px;
+  padding-bottom: 40px;
+  justify-content: space-between;
+  width: 100%;
+  background-color: var(--primary-dark);
 }
-.total-price p{
-    margin: 1rem;
-    font-weight: 500;
-    color: #fff;
-}
-
-.total-price button{
-    background-color: #db4523;
-    color: #fff;
-    margin-right: 1rem;
+.total-price p {
+  margin: 1rem;
+  font-weight: 500;
+  color: #fff;
 }
 
-@media screen and (min-width: 560px ) {
-    .card-container {
-        width: 38rem;
-        justify-content: start;
-    }
-
-    mat-card {
-        width: 16rem;
-    }
-    
+.total-price button {
+  background-color: #db4523;
+  color: #fff;
+  margin-right: 1rem;
 }
 
-.empty{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-.empty h1{
-    position: relative;
-    padding-bottom: 20rem;
-    color: #db4523;
+@media screen and (min-width: 560px) {
+  .card-container {
+    width: 38rem;
+    justify-content: start;
+  }
+
+  mat-card {
+    width: 16rem;
+  }
 }
 
-h1 span{
-    position: absolute;
-    display: inline-block;
-    background-color: #db4523;
-    height: 2px;
-    width: 100%;
-    top: 50px;
-    left: 0;
-    transform: scaleX(.75);
-    animation: line 300ms ease-in-out
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.empty h1 {
+  position: relative;
+  padding-bottom: 20rem;
+  color: #db4523;
+}
+
+h1 span {
+  position: absolute;
+  display: inline-block;
+  background-color: #db4523;
+  height: 2px;
+  width: 100%;
+  top: 50px;
+  left: 0;
+  transform: scaleX(0.75);
+  animation: line 300ms ease-in-out;
 }
 @keyframes line {
-    from {transform: scaleX(0);}
-    to {transform: scaleX(.75);}
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(0.75);
+  }
 }
