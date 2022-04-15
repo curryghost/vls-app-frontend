@@ -23,6 +23,5 @@ export class CourseDetailsComponent implements OnInit {
 
     //fetches the product with the courseId in route
     this.course = this.courseState.getCourse(courseIdFromFromRoute)
-    console.log(courseIdFromFromRoute)
   }
 }

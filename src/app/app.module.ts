@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { CartListComponent } from './comps/cart-list/cart-list.component';
+import { RemoveComponent } from './comps/cart-list/remove/remove.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { CartListComponent } from './comps/cart-list/cart-list.component';
     LoginFormComponent,
     SummaryPipe,
     CheckoutComponent,
-    CartListComponent
+    CartListComponent,
+    RemoveComponent
   ],
   imports: [
     BrowserModule,

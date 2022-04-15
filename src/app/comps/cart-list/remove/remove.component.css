@@ -1,0 +1,13 @@
+mat-icon{
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    color: #5b5656;
+    transition: transform 200ms ease-in-out, color 200ms ease-in-out;
+}
+
+mat-icon:hover{
+    color: #d62828;
+    transform: scale(1.2);
+    transform: rotateZ(15deg);
+}

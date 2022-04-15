@@ -25,4 +25,11 @@ export class StateService {
     getByID(id: number){
       return this.cart.find(course => course.id == id)
     }
+
+    remove(id: number){
+      const index = this.cart.findIndex(course => course.id == id);
+      this.cart.splice(index, 1);
+      this.counter -= 1;
+      this.counter == 0 && (this.toggleCounter = true);
+    }
 }
