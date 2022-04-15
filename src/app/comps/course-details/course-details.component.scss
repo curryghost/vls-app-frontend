@@ -5,24 +5,53 @@
 .hero-bar {
   text-align: center;
   padding: 3rem;
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(65, 9, 121, 1) 35%,
-    rgba(86, 92, 195, 1) 100%
-  );
+  background: linear-gradient(108deg, #020024 0%, #410979 35%, #565cc3 100%);
   color: var(--background);
-  height: 40%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    font-size: 3rem;
+  }
+  h4 {
+    margin-bottom: 2rem;
+  }
 }
 
 .course-about,
 .course-instructor,
 .course-faq {
   margin: 1rem 2rem;
-  padding: 1em 1.5em;
+  padding: 1.7em 2em;
 }
 
 mat-expansion-panel {
   margin: 0 2rem;
   margin-bottom: 1em;
+}
+
+.course-about {
+  min-height: max-content;
+  .photo {
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height: 500px;
+    margin: 2em 2em;
+    display: flex;
+    // align-items: center;
+    justify-content: center;
+    img {
+      max-width: 100%;
+      height: 110%;
+      overflow: hidden;
+      position: relative;
+      top: -5%;
+      aspect-ratio: 735/550;
+    }
+  }
+  p {
+    margin: 1rem 2rem;
+  }
 }

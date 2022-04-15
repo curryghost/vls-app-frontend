@@ -5,8 +5,8 @@
     <div class="meta">
       <div
         class="photo"
-        style="
-          background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg);
+        [style.background-image]="
+          'url(' + courseState.getThumbnail(course) + ')'
         "
       ></div>
       <ul class="details">
