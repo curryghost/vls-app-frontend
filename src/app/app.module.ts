@@ -38,10 +38,7 @@ import { SignUpComponent } from './comps/sign-up/sign-up.component';
     CartListComponent,
     RemoveComponent,
     CheckoutBtnComponent,
-<<<<<<< HEAD
     SignUpComponent
-=======
->>>>>>> 2e53d3626190771bc9523409e40675b0fc12c402
   ],
   imports: [
     BrowserModule,
@@ -50,10 +47,7 @@ import { SignUpComponent } from './comps/sign-up/sign-up.component';
     MaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
-<<<<<<< HEAD
-=======
     FormsModule,
->>>>>>> 2e53d3626190771bc9523409e40675b0fc12c402
   ],
   providers: [],
   bootstrap: [AppComponent],
