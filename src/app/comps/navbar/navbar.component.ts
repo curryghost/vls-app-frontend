@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { StateService } from 'src/app/services/state.service';
+import { SignUpComponent } from '../sign-up/sign-up.component';
 
 @Component({
   selector: 'app-navbar',
@@ -11,9 +13,12 @@ export class NavbarComponent implements OnInit {
   links = [
     {name: "Home", link: "/"},
     {name: "Courses", link: "#"},
-    {name: "Signup", link: "course-signup"}
   ]
+  constructor(public state: StateService, public dialog: MatDialog ) { }
+  name!: string;
 
+  ngOnInit(): void {
+  }
   //Too distracted with this shit
   toggleDrawer(el: Element, $event: any){
     const body = document.getElementsByTagName("body").item(0)
@@ -25,9 +30,9 @@ export class NavbarComponent implements OnInit {
       })
     }
 
-  constructor(public state: StateService) { }
-
-  ngOnInit(): void {
+  openSignUp(){
+    const signUpRef = this.dialog.open(SignUpComponent, {
+      data: {name: this.name}
+    });
   }
-
 }

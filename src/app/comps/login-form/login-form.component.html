@@ -12,7 +12,7 @@
             placeholder="Name Example"
             formControlName="name"
           />
-          <mat-icon *ngIf="name?.touched && name?.valid">task_alt</mat-icon>
+          <mat-icon *ngIf="name?.touched && name?.valid">check_circle</mat-icon>
         </div>
         <mat-error *ngIf="name?.touched && name?.invalid">
           <mat-error *ngIf="name?.errors?.['required']">
@@ -33,7 +33,7 @@
             formControlName="password"
           />
           <mat-icon *ngIf="password?.touched && password?.valid"
-            >task_alt</mat-icon
+            >check_circle</mat-icon
           >
         </div>
         <mat-error *ngIf="password?.touched && password?.invalid">

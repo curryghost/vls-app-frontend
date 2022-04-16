@@ -16,7 +16,6 @@ export class RemoveComponent implements OnInit {
   }
 
   remove(){
-    this.state.remove(this.courseId);
+    this.state.removeItem(this.courseId);
   }
-
 }

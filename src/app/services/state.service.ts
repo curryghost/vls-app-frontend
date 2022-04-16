@@ -12,7 +12,6 @@ export class StateService {
   constructor() { 
     this.getLocalStorage()
     this.counter == 0 && (this.toggleCounter = true)
-    console.log(this.cart)
   }
     getLocalStorage(){
       localStorage.getItem('cart') && this.cart.length == 0 && 
@@ -38,7 +37,7 @@ export class StateService {
       return this.cart.find(course => course.id == id);
     }
 
-    remove(id: number){
+    removeItem(id: number){
       const index = this.cart.findIndex(course => course.id == id);
       this.cart.splice(index, 1);
       this.counter -= 1;
