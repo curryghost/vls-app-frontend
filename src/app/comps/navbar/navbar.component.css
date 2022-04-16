@@ -8,6 +8,7 @@ mat-toolbar {
   /* background-color: var(--primary-dark) !important; */
   height: 60px;
   overflow-x: hidden;
+  overflow-y: hidden;
 }
 .nav {
   display: flex;
@@ -27,7 +28,7 @@ mat-toolbar {
 .logo img {
   width: 2rem;
   height: 2rem;
-  filter: saturate(3);
+  filter: saturate(3) brightness(95%);
 }
 
 /* links */
@@ -66,6 +67,26 @@ mat-toolbar {
 }
 .active-link span {
   transform: scale(1);
+}
+
+/* Search bar */
+.search-field {
+  width: 200px;
+}
+::ng-deep .mat-form-field-flex > .mat-form-field-infix {
+  padding: 0.2em 0px !important;
+}
+::ng-deep .mat-form-field-label-wrapper {
+  top: -0.5em;
+}
+.search-label {
+  display: inline-flex;
+}
+::ng-deep
+  .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float
+  .mat-form-field-label {
+  transform: translateY(-1.1em) scale(0.75);
+  width: 133.33333%;
 }
 
 /* Login button */

@@ -13,7 +13,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { CourseDetailsComponent } from './comps/course-details/course-details.component';
 import { CourseSignupComponent } from './pages/course-signup/course-signup.component';
 import { LoginFormComponent } from './comps/login-form/login-form.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SummaryPipe } from './pipes/summary.pipe';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
@@ -38,7 +38,10 @@ import { SignUpComponent } from './comps/sign-up/sign-up.component';
     CartListComponent,
     RemoveComponent,
     CheckoutBtnComponent,
+<<<<<<< HEAD
     SignUpComponent
+=======
+>>>>>>> 2e53d3626190771bc9523409e40675b0fc12c402
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,10 @@ import { SignUpComponent } from './comps/sign-up/sign-up.component';
     MaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
+<<<<<<< HEAD
+=======
+    FormsModule,
+>>>>>>> 2e53d3626190771bc9523409e40675b0fc12c402
   ],
   providers: [],
   bootstrap: [AppComponent],
