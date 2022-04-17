@@ -22,30 +22,74 @@
             <span></span>
           </button>
         </a>
+        <a>
+          <button mat-flat-button color="primary" (click)="openSignUp()">
+            Sign Up
+            <span></span>
+          </button>
+        </a>
       </div>
 
       <!-- Search bar -->
-      <mat-form-field class="search-field" appearance="fill">
-        <mat-label class="search-label"
-          ><mat-icon class="search-icon">search</mat-icon> Search</mat-label
+      <div class="search-wrapper">
+        <mat-form-field
+          class="search-field"
+          appearance="fill"
+          floatLabel="never"
         >
-        <input
-          matInput
-          type="text"
-          [(ngModel)]="searchValue"
-          #input
-          (keyup)="this.courseState.filterQuery(input)"
-        />
+          <mat-label class="search-label"
+            ><mat-icon class="search-icon">search</mat-icon> Search</mat-label
+          >
+          <input
+            matInput
+            type="text"
+            [(ngModel)]="searchValue"
+            #input
+            (keyup)="this.courseState.filterQuery(input, selectedFilter)"
+          />
+          <button
+            *ngIf="searchValue"
+            matSuffix
+            mat-icon-button
+            aria-label="Clear"
+            (click)="searchValue = ''"
+          >
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-form-field>
+        <!--Dropdown Icon-->
         <button
-          *ngIf="searchValue"
-          matSuffix
           mat-icon-button
-          aria-label="Clear"
-          (click)="searchValue = ''"
+          class="dropdown"
+          [mat-menu-trigger-for]="selectFilter"
+          (click)="dropdownIcon = 'arrow_drop_down'"
         >
-          <mat-icon>close</mat-icon>
+          <mat-icon>{{ dropdownIcon }}</mat-icon>
         </button>
-      </mat-form-field>
+        <mat-menu
+          #selectFilter="matMenu"
+          (closed)="dropdownIcon = 'arrow_right'"
+        >
+          <button
+            mat-menu-item
+            (click)="
+              selectedFilter = 'course';
+              courseState.filterQuery(input, 'course')
+            "
+          >
+            Filter by courses
+          </button>
+          <button
+            mat-menu-item
+            (click)="
+              selectedFilter = 'author';
+              courseState.filterQuery(input, 'author')
+            "
+          >
+            Filter by authors
+          </button>
+        </mat-menu>
+      </div>
 
       <!-- Login Button -->
       <div>

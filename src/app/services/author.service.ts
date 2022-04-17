@@ -7,7 +7,8 @@ import { Author } from '../model/author.model';
 })
 export class AuthorService {
   // Daniel's api
-  baseUrl: string = 'http://localhost:32236/api/Author';
+  baseUrl: string = 'http://localhost:5000/api/Author';
+  // baseUrl: string = 'http://localhost:32236/api/Author';
 
   constructor(private http: HttpClient) {}
 

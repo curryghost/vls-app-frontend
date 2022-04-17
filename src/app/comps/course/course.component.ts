@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Course } from 'src/app/model/course.model';
 import { CourseStateService } from 'src/app/services/course-state.service';
 
 @Component({
@@ -7,13 +8,15 @@ import { CourseStateService } from 'src/app/services/course-state.service';
   styleUrls: ['./course.component.scss'],
 })
 export class CourseComponent implements OnInit {
-  constructor(public courseState: CourseStateService) {}
+  constructor(public courseState: CourseStateService) {
+
+  }
 
   ngOnInit(): void {}
 
-  finalFilteredCourses() {
-    if (this.courseState.filteredCourses.length === 0)
-      return this.courseState.courses;
-    return this.courseState.filteredCourses;
-  }
+  // finalFilteredCourses() {
+  //   if (this.courseState.filteredCourses.length === 0)
+  //     return this.courseState.courses;
+  //   return this.courseState.filteredCourses;
+  // }
 }

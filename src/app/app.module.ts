@@ -20,6 +20,7 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { CartListComponent } from './comps/cart-list/cart-list.component';
 import { RemoveComponent } from './comps/cart-list/remove/remove.component';
 import { CheckoutBtnComponent } from './comps/cart-list/checkout-btn/checkout-btn.component';
+import { SignUpComponent } from './comps/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { CheckoutBtnComponent } from './comps/cart-list/checkout-btn/checkout-bt
     CartListComponent,
     RemoveComponent,
     CheckoutBtnComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
