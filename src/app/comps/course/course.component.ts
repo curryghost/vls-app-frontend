@@ -14,9 +14,9 @@ export class CourseComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  finalFilteredCourses() {
-    if (this.courseState.filteredCourses.length === 0)
-      return this.courseState.courses;
-    return this.courseState.filteredCourses;
-  }
+  // finalFilteredCourses() {
+  //   if (this.courseState.filteredCourses.length === 0)
+  //     return this.courseState.courses;
+  //   return this.courseState.filteredCourses;
+  // }
 }

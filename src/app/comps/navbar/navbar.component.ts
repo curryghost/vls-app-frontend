@@ -3,8 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { StateService } from 'src/app/services/state.service';
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { CourseStateService } from 'src/app/services/course-state.service';
-import { Course } from 'src/app/model/course.model';
-import { CourseService } from 'src/app/services/course.service';
 
 @Component({
   selector: 'app-navbar',
@@ -21,6 +19,8 @@ export class NavbarComponent implements OnInit {
   searchValue: any;
   courses: any;
   name!: string;
+  selectedFilter = 'course'
+  dropdownIcon = 'arrow_right'
 
   constructor(public state: StateService, public dialog: MatDialog, public courseState: CourseStateService) { }
 
@@ -31,11 +31,11 @@ export class NavbarComponent implements OnInit {
     const body = document.getElementsByTagName("body").item(0)
     el.classList.toggle("expand");
     $event.stopPropagation();
-      body?.addEventListener('click', function clickListener() {
-        el.classList.toggle("expand");
-        body.removeEventListener('click', clickListener)
-      })
-    }
+    body?.addEventListener('click', function clickListener() {
+      el.classList.toggle("expand");
+      body.removeEventListener('click', clickListener)
+    })
+  }
 
   openSignUp(){
     const signUpRef = this.dialog.open(SignUpComponent, {

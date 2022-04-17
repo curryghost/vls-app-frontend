@@ -11,7 +11,7 @@ export class CourseStateService {
   courses: any;
   authors: any;
   filterString = '';
-  filteredCourses: Array<any> = [];
+  filteredCourses: any;
 
   constructor(
     private courseService: CourseService,
@@ -19,6 +19,7 @@ export class CourseStateService {
   ) {
     this.courseService.getCourses().subscribe((res) => {
       this.courses = res;
+      this.filteredCourses = res;
       console.log(res);
     });
 
@@ -110,13 +111,27 @@ export class CourseStateService {
   //   });
   // }
 
-  filterQuery(query: any) {
+  filterQuery(query: any, selectedFilter: string) {
     this.filteredCourses.splice(0, this.filteredCourses.length);
+    if (query == '')
+      this.filteredCourses.push(...this.courses)
+    if (selectedFilter == 'course'){
     this.filteredCourses.push(
       ...this.courses.filter((course: any) =>
-        course.name.toLowerCase().includes(query.value.toLowerCase())
-      )
-    );
-    console.log(this.filteredCourses);
+          course.name.toLowerCase().includes(query.value.toLowerCase())
+        )
+      );
+    }
+    if (selectedFilter == 'author') {
+      const filterAuthor: Author[] = [];
+        filterAuthor.push(...this.authors.filter((author: Author) => 
+          author.name?.toLowerCase().includes(query.value.toLowerCase())
+        ))
+      filterAuthor.forEach(author => {
+        this.filteredCourses.push(...this.courses.filter((course: Course) => 
+          course.authorId == author.id)) 
+      })
+    }
+    // console.log(this.filteredCourses);
   }
 }

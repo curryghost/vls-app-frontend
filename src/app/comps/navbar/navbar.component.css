@@ -70,12 +70,21 @@ mat-toolbar {
 }
 
 /* Search bar */
-.search-field {
-  width: 140px;
+.search-wrapper{
   position: relative;
-  font-size: .9rem;
+}
+.search-field {
+  width: 130px;
+  position: relative;
+  font-size: .8rem;
   top: 9px;
 }
+.dropdown{
+  position: absolute;
+  right: -18px;
+  bottom: 12px;
+}
+
 /* effect other children */
 
 /* /* ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
