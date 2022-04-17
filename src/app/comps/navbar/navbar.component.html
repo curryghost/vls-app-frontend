@@ -22,6 +22,15 @@
             <span></span>
           </button>
         </a>
+<<<<<<< HEAD
+=======
+        <a *ngIf="!user.isLogin">
+          <button mat-flat-button color="primary" (click)="openSignUp()">
+            Sign Up
+            <span></span>
+          </button>
+        </a>
+>>>>>>> d39dd13bd9bb42382a5a9cc2374dd9cb7d8af3f9
       </div>
 
       <!-- Search bar -->
@@ -46,7 +55,10 @@
             matSuffix
             mat-icon-button
             aria-label="Clear"
-            (click)="searchValue = ''"
+            (click)="
+              searchValue = ''; courseState.filterQuery('', selectedFilter)
+            "
+            class="close-icon"
           >
             <mat-icon>close</mat-icon>
           </button>
@@ -96,8 +108,18 @@
       </div>
       <!-- Login Button -->
       <div>
-        <a routerLink="/login" routerLinkActive="active-login" class="login">
+        <a
+          routerLink="/login"
+          routerLinkActive="active-login"
+          class="login"
+          *ngIf="!user.isLogin"
+        >
           <button mat-raised-button color="accent">Login</button>
+        </a>
+        <a class="login" *ngIf="user.isLogin">
+          <button mat-raised-button color="accent" (click)="logoutHandler()">
+            Logout
+          </button>
         </a>
         <!-- Menu Icon -->
         <button
@@ -131,6 +153,9 @@
       >
         {{ link.name }}
       </button>
+    </a>
+    <a *ngIf="!user.isLogin">
+      <button mat-flat-button (click)="openSignUp()">Sign Up</button>
     </a>
   </div>
 </div>

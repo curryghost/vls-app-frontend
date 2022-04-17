@@ -5,6 +5,7 @@ import {
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, Observable, retry, throwError } from 'rxjs';
+import { api } from './apiString';
 
 @Injectable({
   providedIn: 'root',
@@ -12,8 +13,7 @@ import { catchError, Observable, retry, throwError } from 'rxjs';
 export class StudentService {
   constructor(private http: HttpClient) {}
 
-  // baseUrl: string = 'http://localhost:5000/api/student';
-  baseUrl: string = 'http://localhost:32236/api/student';
+  baseUrl: string = `${api}/student`;
 
   signUpStudent(formDetails: Object): Observable<HttpResponse<Object>> {
     return this.http

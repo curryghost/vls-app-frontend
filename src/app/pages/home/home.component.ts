@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { JwtHelperService } from '@auth0/angular-jwt';
+import { UserStateService } from 'src/app/services/user-state.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public user: UserStateService, public helper: JwtHelperService) { }
 
   ngOnInit(): void {
   }

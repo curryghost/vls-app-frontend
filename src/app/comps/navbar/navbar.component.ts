@@ -3,6 +3,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { StateService } from 'src/app/services/state.service';
 import { SignUpComponent } from '../sign-up/sign-up.component';
 import { CourseStateService } from 'src/app/services/course-state.service';
+import { UserStateService } from 'src/app/services/user-state.service';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-navbar',
@@ -13,7 +16,7 @@ export class NavbarComponent implements OnInit {
   // Set Nav links here
   links = [
     { name: 'Home', link: '/' },
-    { name: 'My Courses', link: '#' },
+    { name: 'My Courses', link: '/my-courses' },
   ];
 
   searchValue: any;
@@ -25,7 +28,10 @@ export class NavbarComponent implements OnInit {
   constructor(
     public state: StateService,
     public dialog: MatDialog,
-    public courseState: CourseStateService
+    public courseState: CourseStateService,
+    public user: UserStateService,
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {}
@@ -38,6 +44,12 @@ export class NavbarComponent implements OnInit {
       el.classList.toggle('expand');
       body.removeEventListener('click', clickListener);
     });
+  }
+
+  logoutHandler() {
+    localStorage.clear();
+    this.router.navigate(['/']);
+    this.snackBar.open('You are logout', 'close', { duration: 2000 });
   }
 
   openSignUp() {

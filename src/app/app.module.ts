@@ -23,6 +23,9 @@ import { CheckoutBtnComponent } from './comps/cart-list/checkout-btn/checkout-bt
 import { SignUpComponent } from './comps/sign-up/sign-up.component';
 import { AuthorDetailsComponent } from './comps/author-details/author-details.component';
 import { AuthorComponent } from './pages/author/author.component';
+import { JwtModule } from '@auth0/angular-jwt';
+import { domain, port } from './services/apiString';
+import { MyCoursesComponent } from './pages/my-courses/my-courses.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,7 @@ import { AuthorComponent } from './pages/author/author.component';
     SignUpComponent,
     AuthorDetailsComponent,
     AuthorComponent,
+    MyCoursesComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +56,14 @@ import { AuthorComponent } from './pages/author/author.component';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('jwtToken');
+        },
+        allowedDomains: [`${domain}:${port}`],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

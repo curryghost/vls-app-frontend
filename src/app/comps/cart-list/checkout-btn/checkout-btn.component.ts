@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { StateService } from 'src/app/services/state.service';
 
 @Component({
   selector: 'app-checkout-btn',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckoutBtnComponent implements OnInit {
 
-  constructor() { }
+  constructor(private snackBar: MatSnackBar, public cart: StateService) { }
 
   ngOnInit(): void {
   }
-
+  
+  checkoutHandler(){
+    //api goes here
+    this.snackBar.open("You've bought the item!!!", 'close', {duration: 2000})
+  }
 }
