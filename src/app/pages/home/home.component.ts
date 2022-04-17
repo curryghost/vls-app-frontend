@@ -12,7 +12,6 @@ export class HomeComponent implements OnInit {
   constructor(public user: UserStateService, public helper: JwtHelperService) { }
 
   ngOnInit(): void {
-    console.log(this.helper.decodeToken(localStorage.getItem('jwtToken')!))
   }
 
 }
