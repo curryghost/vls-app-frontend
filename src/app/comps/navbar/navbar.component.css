@@ -9,6 +9,7 @@ mat-toolbar {
   height: 60px;
   overflow-x: hidden;
   overflow-y: hidden;
+  padding: 0;
 }
 .nav {
   display: flex;
