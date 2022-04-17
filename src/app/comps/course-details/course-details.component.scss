@@ -2,9 +2,13 @@
   margin: 0 auto;
 }
 
+mat-tab-body-content {
+  height: max-content;
+}
+
 .hero-bar {
   text-align: center;
-  padding: 3rem;
+  padding: 3rem 7rem;
   background: linear-gradient(108deg, #020024 0%, #410979 35%, #565cc3 100%);
   color: var(--background);
   height: 40vh;
@@ -13,7 +17,8 @@
   justify-content: center;
   align-items: center;
   h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    line-height: normal;
   }
   h4 {
     margin-bottom: 2rem;
@@ -22,9 +27,10 @@
 
 .course-about,
 .course-instructor,
+.course-syllabus,
 .course-faq {
-  margin: 1rem 2rem;
-  padding: 1.7em 2em;
+  margin: 1rem 1.5rem 2rem;
+  padding: 2.5em 2.7em;
 }
 
 mat-expansion-panel {
@@ -32,26 +38,108 @@ mat-expansion-panel {
   margin-bottom: 1em;
 }
 
+mat-card-title {
+  margin-bottom: 2rem;
+}
+
 .course-about {
   min-height: max-content;
   .photo {
     background-repeat: no-repeat;
     overflow: hidden;
-    height: 500px;
+    height: 380px;
     margin: 2em 2em;
     display: flex;
-    // align-items: center;
+    align-items: center;
     justify-content: center;
     img {
       max-width: 100%;
-      height: 110%;
-      overflow: hidden;
-      position: relative;
-      top: -5%;
+      height: 500px;
+      top: 0;
+      right: 0;
+      left: 0;
+      // position: relative;
+      // top: -5%;
       aspect-ratio: 735/550;
     }
   }
   p {
     margin: 1rem 2rem;
+  }
+}
+
+.course-instructor {
+  .author-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .author-image {
+      height: 8rem;
+      width: 8rem;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .author-info {
+      margin-left: 2rem;
+    }
+  }
+}
+
+.course-syllabus {
+  padding: 1.5rem 1.5rem;
+}
+
+.author-specializations {
+  min-width: 350px;
+  margin-bottom: 1.5rem;
+}
+
+.student-number {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+  p {
+    margin: 0;
+  }
+}
+
+.course-number {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+  p {
+    margin: 0;
+  }
+}
+
+.course-content {
+  display: flex;
+  margin: 1.5rem 1rem;
+  padding-inline: 1rem;
+  border-bottom: 2px solid #020024;
+
+  .circle {
+    background-color: none;
+    border: 1.6mm ridge var(--primary-dark);
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 1rem;
+    .day-num {
+      font-weight: bold;
+      white-space: nowrap;
+      height: 50%;
+      left: 50%;
+      top: 50%;
+      width: 50%;
+    }
   }
 }

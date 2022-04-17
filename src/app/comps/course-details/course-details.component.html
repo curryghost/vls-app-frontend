@@ -31,17 +31,67 @@
       </ng-template>
       <mat-card class="course-instructor mat-elevation-z4">
         <mat-card-title>Get to know your instructor</mat-card-title>
-        <h3>
-          <a href="#">{{ getCourse().author }}</a>
-        </h3>
-        <p>specializtion here</p>
+        <div class="author-card">
+          <div class="author-pic">
+            <div>
+              <img
+                class="author-image"
+                src="{{ courseState.getAuthor(getCourse()?.authorId).photo }}"
+                alt="profile pic"
+              />
+            </div>
+          </div>
+          <div class="author-info">
+            <h2>
+              <a [routerLink]="['/author/', getCourse()?.authorId]">{{
+                courseState.getAuthor(getCourse()?.authorId).name
+              }}</a>
+            </h2>
+            <h4>
+              {{ courseState.getAuthor(getCourse()?.authorId)?.title }}
+            </h4>
+          </div>
+        </div>
+        <mat-card class="author-specializations">
+          <h3>Specializations</h3>
+          <mat-chip-list aria-label="Spec chips">
+            <mat-chip
+              *ngFor="
+                let specs of courseState
+                  .getAuthor(getCourse()?.authorId)
+                  ?.specialization.split(',')
+              "
+              color="accent"
+              selected
+              >{{ specs }}</mat-chip
+            >
+          </mat-chip-list>
+        </mat-card>
         <div class="student-number">
           <mat-icon>people</mat-icon>&nbsp;
-          <p><b>1000</b> Students</p>
+          <p><b>10</b> Students</p>
         </div>
         <div class="course-number">
           <mat-icon>library_books</mat-icon>&nbsp;
-          <p><b>1000000</b> Courses</p>
+          <p><b>1</b> Course</p>
+        </div>
+      </mat-card>
+    </mat-tab>
+
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">school</mat-icon>&nbsp; Syllabus
+      </ng-template>
+      <mat-card class="course-syllabus mat-elevation-z4">
+        <mat-card-title>What you will be learning</mat-card-title>
+        <div
+          class="course-content"
+          *ngFor="let cont of getCourse().content; let i = index"
+        >
+          <div class="circle">
+            <h3 class="day-num">{{ i + 1 }}</h3>
+          </div>
+          <h4 class="course-content-text">{{ cont }}</h4>
         </div>
       </mat-card>
     </mat-tab>
@@ -74,10 +124,18 @@
               Currently I am {{ panelOpenState ? "open" : "closed" }}
             </mat-panel-description> -->
           </mat-expansion-panel-header>
-          <p>
-            Yes. This is a paid course, you can add this course to your cart by
-            clicking on the price button above.
-          </p>
+          <div *ngIf="getCourse().price == 0; else yesPay">
+            <p>
+              No. This is a free course, you can add this course to your cart
+              and checkout for free by clicking on the Enroll button above.
+            </p>
+          </div>
+          <ng-template #yesPay>
+            <p>
+              Yes. This is a paid course, you can add this course to your cart
+              by clicking on the Enroll button above.
+            </p>
+          </ng-template>
         </mat-expansion-panel>
 
         <mat-expansion-panel>
