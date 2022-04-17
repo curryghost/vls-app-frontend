@@ -173,7 +173,7 @@ mat-toolbar {
   transition: transform 250ms ease-in;
 }
 
-@media screen and (min-width: 680px) {
+@media screen and (min-width: 803px) {
   .logo {
     margin-left: 4rem;
   }

@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { api } from './apiString';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CourseService {
-  baseUrl: string = 'http://localhost:5000/api/course';
+  baseUrl: string = `${api}/course`;
   // baseUrl: string = 'http://localhost:32236/api/Course';
 
   constructor(private http: HttpClient) {}

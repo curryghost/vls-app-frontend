@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Author } from '../model/author.model';
+import { api } from './apiString';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthorService {
   // Daniel's api
-  baseUrl: string = 'http://localhost:5000/api/Author';
+  baseUrl: string = `${api}/author`;
   // baseUrl: string = 'http://localhost:32236/api/Author';
 
   constructor(private http: HttpClient) {}

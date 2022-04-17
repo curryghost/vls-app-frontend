@@ -22,7 +22,7 @@
             <span></span>
           </button>
         </a>
-        <a>
+        <a *ngIf="!user.isLogin">
           <button mat-flat-button color="primary" (click)="openSignUp()">
             Sign Up
             <span></span>
@@ -93,8 +93,18 @@
 
       <!-- Login Button -->
       <div>
-        <a routerLink="/login" routerLinkActive="active-login" class="login">
+        <a
+          routerLink="/login"
+          routerLinkActive="active-login"
+          class="login"
+          *ngIf="!user.isLogin"
+        >
           <button mat-raised-button color="accent">Login</button>
+        </a>
+        <a class="login" *ngIf="user.isLogin">
+          <button mat-raised-button color="accent" (click)="logoutHandler()">
+            Logout
+          </button>
         </a>
         <!-- Menu Icon -->
         <button
@@ -129,7 +139,7 @@
         {{ link.name }}
       </button>
     </a>
-    <a>
+    <a *ngIf="!user.isLogin">
       <button mat-flat-button (click)="openSignUp()">Sign Up</button>
     </a>
   </div>
