@@ -86,6 +86,10 @@ mat-toolbar {
   bottom: 12px;
 }
 
+.close-icon mat-icon{
+  font-size: .9rem;
+}
+
 /* effect other children */
 
 /* /* ::ng-deep .mat-form-field-flex > .mat-form-field-infix {

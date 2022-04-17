@@ -52,7 +52,10 @@
             matSuffix
             mat-icon-button
             aria-label="Clear"
-            (click)="searchValue = ''"
+            (click)="
+              searchValue = ''; courseState.filterQuery('', selectedFilter)
+            "
+            class="close-icon"
           >
             <mat-icon>close</mat-icon>
           </button>
