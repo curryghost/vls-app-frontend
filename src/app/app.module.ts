@@ -21,6 +21,8 @@ import { CartListComponent } from './comps/cart-list/cart-list.component';
 import { RemoveComponent } from './comps/cart-list/remove/remove.component';
 import { CheckoutBtnComponent } from './comps/cart-list/checkout-btn/checkout-btn.component';
 import { SignUpComponent } from './comps/sign-up/sign-up.component';
+import { AuthorDetailsComponent } from './comps/author-details/author-details.component';
+import { AuthorComponent } from './pages/author/author.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { domain, port } from './services/apiString';
 import { MyCoursesComponent } from './pages/my-courses/my-courses.component';
@@ -42,7 +44,9 @@ import { MyCoursesComponent } from './pages/my-courses/my-courses.component';
     RemoveComponent,
     CheckoutBtnComponent,
     SignUpComponent,
-    MyCoursesComponent
+    AuthorDetailsComponent,
+    AuthorComponent,
+    MyCoursesComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,11 +59,11 @@ import { MyCoursesComponent } from './pages/my-courses/my-courses.component';
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {
-          return localStorage.getItem('jwtToken')
+          return localStorage.getItem('jwtToken');
         },
-        allowedDomains: [`${domain}:${port}`]
-      }
-    })
+        allowedDomains: [`${domain}:${port}`],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],

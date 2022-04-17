@@ -1,0 +1,47 @@
+<div class="author-container">
+  <div id="author-details-section" *ngIf="getAuthor()">
+    <div class="author-hero-bar">
+      <div>
+        <img
+          class="author-image"
+          src="{{ getAuthor()?.photo }}"
+          alt="profile pic"
+        />
+      </div>
+      <div>
+        <h2>{{ getAuthor()?.name }}</h2>
+        <h4>{{ getAuthor()?.title }}</h4>
+      </div>
+    </div>
+
+    <mat-card class="author-specializations">
+      <h3>Specializations</h3>
+      <mat-chip-list aria-label="Spec chips">
+        <mat-chip
+          *ngFor="let specs of getAuthor()?.specialization.split(',')"
+          color="accent"
+          selected
+          >{{ specs }}</mat-chip
+        >
+      </mat-chip-list>
+    </mat-card>
+
+    <mat-card class="author-courses">
+      <h3>Courses</h3>
+      <mat-card
+        *ngFor="let course of courseState.getCoursesByAuthor(getAuthor()?.id)"
+      >
+        <div
+          class="photo"
+          [style.background-image]="
+            'url(' + courseState.getThumbnail(course) + ')'
+          "
+        >
+          <img src="" alt="" />
+        </div>
+        <h4>{{ course.name }}</h4>
+        <p>{{ course.description }}</p>
+      </mat-card>
+    </mat-card>
+  </div>
+</div>

@@ -71,16 +71,16 @@ mat-toolbar {
 }
 
 /* Search bar */
-.search-wrapper{
+.search-wrapper {
   position: relative;
 }
 .search-field {
   width: 130px;
   position: relative;
-  font-size: .8rem;
+  font-size: 0.8rem;
   top: 9px;
 }
-.dropdown{
+.dropdown {
   position: absolute;
   right: -18px;
   bottom: 12px;
@@ -108,6 +108,10 @@ mat-toolbar {
   width: 133.33333%;
 } */
 
+/* signup button */
+.signup-btn {
+  margin-left: 0.5rem;
+}
 /* Login button */
 .active-login {
   display: none;

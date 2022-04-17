@@ -11,11 +11,11 @@
       ></div>
       <ul class="details">
         <li class="author">
-          <a href="#">{{
+          <a [routerLink]="['/author/', course.authorId]">{{
             courseState.getCourseAuthor(course?.authorId)?.name
           }}</a>
         </li>
-        <li class="date">Course begins: {{ course.name }}</li>
+        <li class="date">Course begins: {{ course.start }}</li>
       </ul>
     </div>
     <div class="description">

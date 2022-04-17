@@ -1,57 +1,62 @@
-mat-dialog-content{
-    position: relative;
+mat-dialog-content {
+  position: relative;
 }
-mat-dialog-content mat-icon{
-    position: absolute;
-    right: 18px;
-    top: 0;
+mat-dialog-content mat-icon {
+  position: absolute;
+  right: 18px;
+  top: 0;
 }
-mat-dialog-content mat-icon:hover{
-    cursor: pointer;
+mat-dialog-content mat-icon:hover {
+  cursor: pointer;
 }
 h3 {
-    text-align: center;
-    margin-bottom: .5rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 p {
-    color: red;
-    text-align: center;
-    font-size: 1rem;
+  color: red;
+  text-align: center;
+  font-size: 1rem;
 }
 form {
-    font-size: .6rem;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0 2rem;
+  font-size: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 2rem;
 }
-form > *{
-    width: 100%;
-}
-
-.row{
-    display: flex;
-    width: 100%;
-    gap: 1rem;
-    justify-content: space-evenly;
-}
-.row > *{
-    width: 100%;
+form > * {
+  width: 100%;
 }
 
-.input{
-    display: flex;
-    align-items: center;
+.row {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  justify-content: space-evenly;
 }
-.input mat-icon{
-    font-size: .9rem;
-    color: #17ac17;
+.row > * {
+  width: 100%;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+}
+.input mat-icon {
+  font-size: 0.9rem;
+  color: #17ac17;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
 }
 
 @media screen and (min-width: 680px) {
-    mat-dialog-content{
-        width: 25rem;
-    }
+  mat-dialog-content {
+    width: 25rem;
+  }
 }
