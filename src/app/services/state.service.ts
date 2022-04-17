@@ -44,4 +44,11 @@ export class StateService {
       this.counter == 0 && (this.toggleCounter = true);
       this.setLocalStorage();
     }
+
+    clearCart(){
+      this.cart.splice(0, this.cart.length)
+      this.counter = 0
+      this.toggleCounter = true
+      localStorage.removeItem('cart')
+    }
 }

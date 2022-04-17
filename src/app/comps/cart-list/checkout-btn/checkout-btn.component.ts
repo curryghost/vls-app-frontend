@@ -15,7 +15,8 @@ export class CheckoutBtnComponent implements OnInit {
   }
   
   checkoutHandler(){
-    //api goes here
+    this.cart.clearCart()
     this.snackBar.open("You've bought the item!!!", 'close', {duration: 2000})
+    //api goes here
   }
 }
