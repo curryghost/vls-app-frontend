@@ -113,25 +113,33 @@ export class CourseStateService {
 
   filterQuery(query: any, selectedFilter: string) {
     this.filteredCourses.splice(0, this.filteredCourses.length);
-    if (query == '')
-      this.filteredCourses.push(...this.courses)
-    if (selectedFilter == 'course'){
-    this.filteredCourses.push(
-      ...this.courses.filter((course: any) =>
+    if (query == '') this.filteredCourses.push(...this.courses);
+    if (selectedFilter == 'course') {
+      this.filteredCourses.push(
+        ...this.courses.filter((course: any) =>
           course.name.toLowerCase().includes(query.value.toLowerCase())
         )
       );
     }
     if (selectedFilter == 'author') {
       const filterAuthor: Author[] = [];
-        filterAuthor.push(...this.authors.filter((author: Author) => 
+      filterAuthor.push(
+        ...this.authors.filter((author: Author) =>
           author.name?.toLowerCase().includes(query.value.toLowerCase())
-        ))
-      filterAuthor.forEach(author => {
-        this.filteredCourses.push(...this.courses.filter((course: Course) => 
-          course.authorId == author.id)) 
-      })
+        )
+      );
+      filterAuthor.forEach((author) => {
+        this.filteredCourses.push(
+          ...this.courses.filter(
+            (course: Course) => course.authorId == author.id
+          )
+        );
+      });
     }
     // console.log(this.filteredCourses);
+  }
+
+  getCoursesByAuthor(authorId: number) {
+    return this.courses.filter((course: Course) => course.authorId == authorId);
   }
 }

@@ -12,34 +12,37 @@ import { CourseStateService } from 'src/app/services/course-state.service';
 export class NavbarComponent implements OnInit {
   // Set Nav links here
   links = [
-    {name: "Home", link: "/"},
-    {name: "Courses", link: "#"},
-  ]
+    { name: 'Home', link: '/' },
+    { name: 'My Courses', link: '#' },
+  ];
 
   searchValue: any;
   courses: any;
   name!: string;
-  selectedFilter = 'course'
-  dropdownIcon = 'arrow_right'
+  selectedFilter = 'course';
+  dropdownIcon = 'arrow_right';
 
-  constructor(public state: StateService, public dialog: MatDialog, public courseState: CourseStateService) { }
+  constructor(
+    public state: StateService,
+    public dialog: MatDialog,
+    public courseState: CourseStateService
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   //Too distracted with this shit
-  toggleDrawer(el: Element, $event: any){
-    const body = document.getElementsByTagName("body").item(0)
-    el.classList.toggle("expand");
+  toggleDrawer(el: Element, $event: any) {
+    const body = document.getElementsByTagName('body').item(0);
+    el.classList.toggle('expand');
     $event.stopPropagation();
     body?.addEventListener('click', function clickListener() {
-      el.classList.toggle("expand");
-      body.removeEventListener('click', clickListener)
-    })
+      el.classList.toggle('expand');
+      body.removeEventListener('click', clickListener);
+    });
   }
 
-  openSignUp(){
+  openSignUp() {
     const signUpRef = this.dialog.open(SignUpComponent, {
-      data: {name: this.name}
+      data: { name: this.name },
     });
   }
   // how to get the search value and search through courses and courses.author?/???

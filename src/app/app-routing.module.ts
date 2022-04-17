@@ -4,12 +4,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CourseSignupComponent } from './pages/course-signup/course-signup.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { AuthorComponent } from './pages/author/author.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  {path: 'checkout', component: CheckoutComponent},
+  { path: 'checkout', component: CheckoutComponent },
   { path: 'course-signup/:id', component: CourseSignupComponent },
+  { path: 'author/:id', component: AuthorComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,57 @@
+.author-container {
+  display: grid;
+}
+
+#author-details-section {
+  text-align: center;
+  padding: 1rem 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-top: 3rem;
+  max-width: 750px;
+}
+
+.author-hero-bar {
+  display: grid;
+
+  column-gap: 2rem;
+  row-gap: 1.5rem;
+
+  .author-image {
+    height: 15rem;
+    width: 15rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  h2 {
+    font-size: x-large;
+  }
+}
+
+mat-card h3 {
+  text-decoration: underline var(--primary-light);
+  text-align: start;
+}
+
+* + * {
+  margin-bottom: 1.5rem;
+}
+
+.author-specializations {
+  min-width: 350px;
+}
+.author-courses {
+  min-width: 350px;
+}
+
+.photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+}

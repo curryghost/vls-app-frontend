@@ -21,6 +21,8 @@ import { CartListComponent } from './comps/cart-list/cart-list.component';
 import { RemoveComponent } from './comps/cart-list/remove/remove.component';
 import { CheckoutBtnComponent } from './comps/cart-list/checkout-btn/checkout-btn.component';
 import { SignUpComponent } from './comps/sign-up/sign-up.component';
+import { AuthorDetailsComponent } from './comps/author-details/author-details.component';
+import { AuthorComponent } from './pages/author/author.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { SignUpComponent } from './comps/sign-up/sign-up.component';
     CartListComponent,
     RemoveComponent,
     CheckoutBtnComponent,
-    SignUpComponent
+    SignUpComponent,
+    AuthorDetailsComponent,
+    AuthorComponent,
   ],
   imports: [
     BrowserModule,
