@@ -46,7 +46,7 @@ export class SignUpComponent implements OnInit {
     const details = {...this.signUpForm.value};
     delete details['verifyPassword'];
     this.pending = true
-    this.studentService.signUpStudent(details).subscribe({
+    this.studentService.signUp(details).subscribe({
       next: (res: any) => {console.log(res); localStorage.setItem('jwtToken', res.token)},
       error: (err) => { this.error = err; this.pending = false; },
       complete: () => {this.pending = false; this.signUpRef.close()},

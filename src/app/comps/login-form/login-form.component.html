@@ -3,6 +3,7 @@
   <mat-card>
     <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
       <h2>Student Login</h2>
+      <p *ngIf="errorMsg">{{ errorMsg }}</p>
       <mat-form-field>
         <mat-label>User Name</mat-label>
         <div class="login-input">
@@ -10,15 +11,17 @@
             type="text"
             matInput
             placeholder="Name Example"
-            formControlName="name"
+            formControlName="userName"
           />
-          <mat-icon *ngIf="name?.touched && name?.valid">check_circle</mat-icon>
+          <mat-icon *ngIf="userName?.touched && userName?.valid"
+            >check_circle</mat-icon
+          >
         </div>
-        <mat-error *ngIf="name?.touched && name?.invalid">
-          <mat-error *ngIf="name?.errors?.['required']">
+        <mat-error *ngIf="userName?.touched && userName?.invalid">
+          <mat-error *ngIf="userName?.errors?.['required']">
             Name is required
           </mat-error>
-          <mat-error *ngIf="name?.errors?.['minlength']"
+          <mat-error *ngIf="userName?.errors?.['minlength']"
             >Minimum length of at least 5 characters
           </mat-error>
         </mat-error>

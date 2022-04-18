@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { StudentService } from 'src/app/services/student.service';
 
 @Component({
   selector: 'app-login-form',
@@ -8,17 +10,19 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginFormComponent implements OnInit {
   loginForm = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.minLength(5)]),
+    userName: new FormControl('', [Validators.required, Validators.minLength(5)]),
     password: new FormControl('', [Validators.required, Validators.minLength(5)])
   })
 
-  constructor() { }
+  constructor(private student: StudentService, private router: Router, ) { }
 
   ngOnInit(): void {
   }
+  errorMsg = ''
+  pending = false
 
-  get name(){
-    return this.loginForm.get('name')
+  get userName(){
+    return this.loginForm.get('userName')
   }
   get password(){
     return this.loginForm.get('password')
@@ -26,6 +30,14 @@ export class LoginFormComponent implements OnInit {
 
   onSubmit(){
     // To call service
+    this.pending = true
+    console.log(this.loginForm.value)
+    this.student.login(this.loginForm.value).subscribe({
+      next: (res: any) => localStorage.setItem('jwtToken', res.token),
+      error: (err) => { this.errorMsg = err.message; this.pending = false },
+      complete: () => {this.pending = false; this.router.navigate(['/'])}
+    }
+    )
 
     this.loginForm.reset();
   }

@@ -22,12 +22,6 @@
             <span></span>
           </button>
         </a>
-        <a *ngIf="!user.isLogin">
-          <button mat-flat-button color="primary" (click)="openSignUp()">
-            Sign Up
-            <span></span>
-          </button>
-        </a>
       </div>
 
       <!-- Search bar -->
@@ -96,7 +90,7 @@
 
       <!-- Signup Button -->
       <div class="signup-btn">
-        <a>
+        <a *ngIf="!user.isLogin">
           <button mat-flat-button color="primary" (click)="openSignUp()">
             Sign Up
             <span></span>

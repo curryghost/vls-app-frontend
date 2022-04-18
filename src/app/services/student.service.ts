@@ -15,7 +15,7 @@ export class StudentService {
 
   baseUrl: string = `${api}/student`;
 
-  signUpStudent(formDetails: Object): Observable<HttpResponse<Object>> {
+  signUp(formDetails: Object): Observable<HttpResponse<Object>> {
     return this.http
       .post<HttpResponse<Object>>(`${this.baseUrl}/register`, formDetails)
       .pipe(
@@ -23,14 +23,28 @@ export class StudentService {
         catchError((err: HttpErrorResponse) => {
           let errorMsg: string;
           if (err.status == 400) {
-            console.error(err);
             errorMsg = 'Unable to signup, user might already exist.';
           } else {
-            console.error(err);
             errorMsg = 'Something went wrong. Server might be down.';
           }
           return throwError(() => new Error(errorMsg));
         })
       );
+  }
+
+  login(loginDetails: Object){
+    return this.http.post(`${this.baseUrl}/login`, loginDetails)
+      .pipe(
+        retry(3),
+        catchError((err: HttpErrorResponse) => {
+          let errorMsg: string;
+          if (err.status == 401) {
+            errorMsg = "You got the wrong password or user name"
+          } else {
+            errorMsg = "Something went wrong. Server might be down"
+          }
+          return throwError(() => new Error(errorMsg))
+        })
+      )
   }
 }

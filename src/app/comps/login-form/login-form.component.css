@@ -1,6 +1,10 @@
 mat-card {
     padding: 0;
 } 
+p {
+    color: red;
+    font-size: .7rem;
+}
 .form-container {
     display: flex;
     flex-direction: column;
@@ -43,7 +47,7 @@ mat-card {
 .login-form {
     display: flex;
     flex-direction: column;
-    height: 21rem;
+    height: 23rem;
     width: 17rem;
     align-items: center;
 }

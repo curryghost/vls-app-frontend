@@ -19,6 +19,8 @@ mat-toolbar {
 
 /* Logo */
 .logo {
+  height: auto;
+  width: 15%;
   flex-grow: 1;
 }
 .logo button {
@@ -40,12 +42,12 @@ mat-toolbar {
 .links > a {
   margin: 1rem;
 }
-.links button {
+.links button, .signup-btn {
   position: relative;
   /* background-color: var(--primary-dark); */
   transition: color 250ms ease-in;
 }
-.links span {
+.links span, .signup-btn span {
   display: inline-block;
   position: absolute;
   background-color: var(--secondary-dark);
@@ -56,11 +58,11 @@ mat-toolbar {
   transform: scale(0, 1);
   transition: transform 250ms ease-in, background-color 250ms ease-in;
 }
-.links button:hover span {
+.links button:hover span, .signup-btn:hover span {
   transform: scale(1);
   background-color: var(--secondary-light);
 }
-.links button:hover {
+.links button:hover .signup-btn:hover{
   color: var(--secondary-light);
 }
 .active-link {
@@ -73,9 +75,11 @@ mat-toolbar {
 /* Search bar */
 .search-wrapper {
   position: relative;
+  width: 25%;
+  max-width: 200px;
 }
 .search-field {
-  width: 130px;
+  width: 100%;
   position: relative;
   font-size: 0.8rem;
   top: 9px;
@@ -110,7 +114,11 @@ mat-toolbar {
 
 /* signup button */
 .signup-btn {
-  margin-left: 0.5rem;
+margin-left: .4rem;
+}
+.signup-btn button{
+  padding: .1rem;
+  font-size: .7rem;
 }
 /* Login button */
 .active-login {
@@ -118,10 +126,12 @@ mat-toolbar {
 }
 
 .login button {
-  margin: 0 1rem;
+  margin: 0 .5rem;
   background-color: var(--secondary-dark);
   color: var(--primary-light);
   transition: color 250ms ease-in, background-color 250ms ease-in;
+  width: .5rem;
+  font-size: .7rem;
 }
 
 .login button:hover {
@@ -181,8 +191,8 @@ mat-toolbar {
   transition: transform 250ms ease-in;
 }
 
-@media screen and (min-width: 803px) {
-  .logo {
+@media screen and (min-width: 825px) {
+  .logo{
     margin-left: 4rem;
   }
   .links {
@@ -190,6 +200,15 @@ mat-toolbar {
   }
   .menu {
     display: none;
+  }
+  .signup-btn button{
+    font-size: .8rem;
+    width: initial;
+  }
+  .login button{
+    margin: 0 1rem;
+    font-size: .8rem;
+    width: initial;
   }
   .cart {
     margin-right: 5rem;
