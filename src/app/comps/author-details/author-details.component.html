@@ -29,18 +29,21 @@
     <mat-card class="author-courses">
       <h3>Courses</h3>
       <mat-card
+        class="mini-course-card"
         *ngFor="let course of courseState.getCoursesByAuthor(getAuthor()?.id)"
+        [routerLink]="['/course-signup/', course?.id]"
       >
-        <div
-          class="photo"
-          [style.background-image]="
-            'url(' + courseState.getThumbnail(course) + ')'
-          "
-        >
-          <img src="" alt="" />
+        <div class="course-thumb-frame">
+          <img
+            class="course-thumb"
+            src="{{ courseState.getThumbnail(course) }}"
+            alt="course thumbnail"
+          />
         </div>
-        <h4>{{ course.name }}</h4>
-        <p>{{ course.description }}</p>
+        <div>
+          <h2 class="title">{{ course.name }}</h2>
+          <p>{{ course.description }}</p>
+        </div>
       </mat-card>
     </mat-card>
   </div>
